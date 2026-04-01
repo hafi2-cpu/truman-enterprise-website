@@ -261,12 +261,13 @@ nav {
 /* ===== PAGE HERO ===== */
 .page-hero {
   position: relative;
-  min-height: 480px;
+  min-height: 520px;
   background-size: cover;
-  background-position: center center;
+  background-position: center 40%;
   background-repeat: no-repeat;
   display: flex;
   align-items: flex-end;
+  width: 100%;
 }
 
 .page-hero::after {
@@ -1606,7 +1607,7 @@ hr.divider {
   .form-row { grid-template-columns: 1fr; }
   .trip-row .form-row { grid-template-columns: 1fr 1fr; }
   .page-hero-content { padding: 28px 24px; }
-  .page-hero { min-height: 380px; }
+  .page-hero { min-height: 420px; }
   .hero { min-height: 500px; }
   .hero-content { text-align: center; padding: 90px 24px 70px; }
   .hero-actions { justify-content: center; }
@@ -1617,7 +1618,7 @@ hr.divider {
   section { padding: 56px 16px; }
   .hero { min-height: 420px; }
   .hero-content { padding: 80px 16px 60px; }
-  .page-hero { min-height: 300px; }
+  .page-hero { min-height: 320px; }
   .page-hero-content { padding: 24px 20px; }
   .form-card { padding: 24px 20px; }
   .footer-grid { grid-template-columns: 1fr; }
