@@ -6,7 +6,84 @@
   <title>Support the Trust — Truman Enterprise Narrowboat Trust</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <style>
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .support-card-new {
+      background: white;
+      border-radius: 14px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 16px rgba(13,33,55,0.08);
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid #b8852a;
+      display: flex;
+      flex-direction: column;
+    }
+    .support-card-new .icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .support-card-new h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: #0d2137;
+      margin-bottom: 10px;
+    }
+    .support-card-new p {
+      font-size: 0.88rem;
+      color: #6b7a8d;
+      line-height: 1.7;
+      flex: 1;
+    }
+    .support-card-new .card-footer {
+      margin-top: 20px;
+    }
+    .bank-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.83rem;
+    }
+    .bank-table tr {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .bank-table td {
+      padding: 8px 4px;
+      color: #3d4a5c;
+    }
+    .bank-table td:first-child {
+      color: #6b7a8d;
+      font-weight: 500;
+      width: 44%;
+    }
+    .bank-table td:last-child {
+      font-weight: 600;
+      color: #0d2137;
+    }
+    .contact-box {
+      background: #f9f6f1;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #3d4a5c;
+      line-height: 1.8;
+    }
+    .contact-box a { color: #1a6e62; text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
+    .teal-border { border-top-color: #1a6e62 !important; }
+    @media (max-width: 900px) {
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .support-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -56,7 +133,7 @@
 
       <div style="margin: 28px 0 12px;">
         <div style="display:flex; justify-content:space-between; font-family:sans-serif; font-size:0.88rem; color:rgba(255,255,255,0.8); margin-bottom:8px;">
-          <span>Raised so far: <strong style="color:var(--gold);">£67,000</strong></span>
+          <span>Raised so far: <strong style="color:var(--gold-light);">£67,000</strong></span>
           <span>Target: <strong style="color:white;">£100,000</strong></span>
         </div>
         <div class="progress-bar-wrap">
@@ -69,63 +146,83 @@
     </div>
 
     <!-- Ways to donate -->
-    <div class="section-label" style="margin-top:48px;">How to Help</div>
-    <h2 class="section-title">Ways to Support Us</h2>
-
-    <div class="support-ways">
-      <div class="support-card">
-        <div class="support-card-icon">🏦</div>
-        <h3>BACS Transfer</h3>
-        <p>Make a direct bank transfer using the details below. Please use your name or organisation as a reference.</p>
-        <div class="bank-details" style="text-align:left; margin-top:8px;">
-          <h4>Bank Details</h4>
-          <div class="bank-row"><span>Bank</span><span>Unity Trust Bank</span></div>
-          <div class="bank-row"><span>Account Name</span><span>Truman Enterprise NB Trust</span></div>
-          <div class="bank-row"><span>Account No.</span><span>20316185</span></div>
-          <div class="bank-row"><span>Sort Code</span><span>60-83-01</span></div>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <div class="support-card-icon">✉️</div>
-        <h3>Cheque</h3>
-        <p>Send a cheque payable to <strong>Truman Enterprise Narrowboat Trust</strong> to our Treasurer.</p>
-        <div class="info-box" style="margin-top:12px; text-align:left;">
-          Contact Chris Rogers for the postal address:<br>
-          <a href="mailto:treasurer@truman-enterprise.org.uk" style="color:var(--teal);">treasurer@truman-enterprise.org.uk</a><br>
-          <a href="tel:07763214524" style="color:var(--teal);">07763 214524</a>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <div class="support-card-icon">💰</div>
-        <h3>Donate on Board</h3>
-        <p>Small or large donations can be made on board the Enterprise in the donation tin during your trip.</p>
-        <p style="margin-top:8px; color:var(--text-light);">Every penny goes directly towards maintaining our boat and funding future trips.</p>
-      </div>
-
-      <div class="support-card">
-        <div class="support-card-icon">🎯</div>
-        <h3>Sponsor a Trip</h3>
-        <p>Perhaps you would like to sponsor a boat trip for a group who struggle to afford one. You can nominate a group, or we will find one for you.</p>
-        <a href="mailto:enterprise@truman-enterprise.org.uk?subject=Trip%20Sponsorship%20Enquiry" class="btn btn-primary" style="padding:10px 16px; font-size:0.85rem; margin-top:8px; display:inline-block;">Enquire About Sponsorship</a>
-      </div>
-
-      <div class="support-card">
-        <div class="support-card-icon">📝</div>
-        <h3>Financial Help</h3>
-        <p>As a small charity, we welcome and are grateful for any financial donation to support our work. Every contribution helps us maintain our boat, cover running costs, and continue providing trips.</p>
-        <p style="margin-top:8px; font-family:sans-serif; font-size:0.82rem; color:var(--teal);">Contact our Treasurer for other ways of donating.</p>
-      </div>
-
-      <div class="support-card" style="border-top-color: var(--teal);">
-        <div class="support-card-icon">🤝</div>
-        <h3>Volunteer Your Time</h3>
-        <p>Your time and energy are just as valuable as financial support. See all the ways you can volunteer with us on our Get Involved page.</p>
-        <a href="get-involved.html" class="btn btn-primary" style="padding:10px 16px; font-size:0.85rem; margin-top:8px; display:inline-block;">Get Involved</a>
-      </div>
+    <div style="margin-top:56px; text-align:center;">
+      <div class="section-label">How to Help</div>
+      <h2 class="section-title">Ways to Support Us</h2>
     </div>
 
+    <div class="support-grid">
+
+      <!-- BACS -->
+      <div class="support-card-new">
+        <div class="icon">🏦</div>
+        <h3>BACS Transfer</h3>
+        <p>Make a direct bank transfer — the easiest way to donate. Please use your name or organisation as a reference so we can thank you.</p>
+        <div class="card-footer">
+          <table class="bank-table">
+            <tr><td>Bank</td><td>Unity Trust Bank</td></tr>
+            <tr><td>Account Name</td><td>Truman Enterprise NB Trust</td></tr>
+            <tr><td>Account No.</td><td>20316185</td></tr>
+            <tr><td>Sort Code</td><td>60-83-01</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cheque -->
+      <div class="support-card-new">
+        <div class="icon">✉️</div>
+        <h3>Cheque</h3>
+        <p>Send a cheque payable to <strong style="color:#0d2137;">Truman Enterprise Narrowboat Trust</strong> to our Treasurer, Chris Rogers.</p>
+        <div class="card-footer">
+          <div class="contact-box">
+            Contact Chris for the postal address:<br>
+            <a href="mailto:treasurer@truman-enterprise.org.uk">treasurer@truman-enterprise.org.uk</a><br>
+            <a href="tel:07763214524">07763 214524</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donate on board -->
+      <div class="support-card-new">
+        <div class="icon">💰</div>
+        <h3>Donate on Board</h3>
+        <p>Small or large cash donations can be made on board the Enterprise in the donation tin during your trip. Every penny goes directly towards maintaining our boat and funding future trips.</p>
+      </div>
+
+      <!-- Sponsor a trip -->
+      <div class="support-card-new">
+        <div class="icon">🎯</div>
+        <h3>Sponsor a Trip</h3>
+        <p>Sponsor a boat trip for a community group who struggle to afford one. You can nominate a group, or we will find one for you. A wonderful way to give back.</p>
+        <div class="card-footer">
+          <a href="mailto:enterprise@truman-enterprise.org.uk?subject=Trip%20Sponsorship%20Enquiry" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center;">Enquire About Sponsorship</a>
+        </div>
+      </div>
+
+      <!-- Financial help -->
+      <div class="support-card-new">
+        <div class="icon">📝</div>
+        <h3>Other Financial Help</h3>
+        <p>As a small charity we welcome any financial donation, large or small. Every contribution helps us maintain the boat, cover running costs, and continue providing trips for those who need them.</p>
+        <div class="card-footer">
+          <div class="contact-box">
+            Contact our Treasurer for other ways of giving:<br>
+            <a href="mailto:treasurer@truman-enterprise.org.uk">treasurer@truman-enterprise.org.uk</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volunteer -->
+      <div class="support-card-new teal-border">
+        <div class="icon">🤝</div>
+        <h3>Volunteer Your Time</h3>
+        <p>Your time and energy are just as valuable as financial support. From crewing the boat to admin and fundraising — there are many ways to get involved with our friendly team.</p>
+        <div class="card-footer">
+          <a href="get-involved.html" class="btn btn-primary" style="width:100%; text-align:center; justify-content:center;">See Volunteering Roles</a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -171,6 +268,7 @@
         <h4>Contact</h4>
         <p>📞 <a href="tel:07895053090" style="color:rgba(255,255,255,0.6); text-decoration:none;">07895 053090</a></p>
         <p>✉️ <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.78rem;">enterprise@truman-enterprise.org.uk</a></p>
+        <p style="margin-top:12px;">📍 Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton WV10 7DT</p>
       </div>
       <div class="footer-col">
         <h4>Season</h4>
@@ -180,6 +278,7 @@
     </div>
     <div class="footer-bottom">
       <p>© 2025 Truman Enterprise Narrowboat Trust. Registered Charity No. 1037914.</p>
+      <p>Member of the National Community Boats Association</p>
     </div>
   </div>
 </footer>
