@@ -7,183 +7,32 @@
   <meta name="description" content="A volunteer-run charity providing accessible canal boat day trips for elderly, disabled and community groups across the West Midlands since 1968.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <style>
-    /* Home-specific extras */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .two-col.reverse { direction: rtl; }
-    .two-col.reverse > * { direction: ltr; }
-
-    .img-frame {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .img-frame img { width: 100%; display: block; }
-
-    .img-frame-badge {
-      position: absolute;
-      bottom: -16px; right: -16px;
-      background: var(--navy);
-      color: white;
-      border-radius: 12px;
-      padding: 18px 22px;
-      text-align: center;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .img-frame-badge .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-
-    .img-frame-badge .lbl {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.65);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-
-    .trips-grid-home {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .trip-summary-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-      transition: transform 0.25s, box-shadow 0.25s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .trip-summary-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .trip-summary-top {
-      padding: 24px 24px 20px;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .trip-summary-top::before {
-      content: '';
-      position: absolute;
-      top: -30px; right: -30px;
-      width: 110px; height: 110px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
-    }
-
-    .trip-summary-top .trip-icon { font-size: 1.8rem; margin-bottom: 10px; }
-    .trip-summary-top h3 { font-size: 1.2rem; margin-bottom: 4px; }
-    .trip-summary-top .hours { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
-
-    .trip-summary-bottom {
-      padding: 20px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .trip-summary-bottom p {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .trip-price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
-    }
-
-    .trip-price-row .price {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    /* Charity CTA strip */
-    .charity-strip {
-      background: var(--cream);
-      padding: 28px 32px;
-      border-radius: var(--radius-lg);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      border: 1px solid var(--border);
-      margin-top: 48px;
-      flex-wrap: wrap;
-    }
-
-    .charity-strip p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--text-mid);
-      max-width: 580px;
-    }
-
-    @media (max-width: 900px) {
-      .two-col { grid-template-columns: 1fr; gap: 32px; }
-      .trips-grid-home { grid-template-columns: 1fr; }
-      .charity-strip { flex-direction: column; text-align: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style-v2.css">
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- Nav -->
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none">
         <rect x="4" y="28" width="40" height="10" rx="2" fill="#1a6e62"/>
         <rect x="8" y="22" width="28" height="8" rx="1" fill="#b8852a"/>
         <rect x="16" y="14" width="16" height="10" rx="1" fill="#b8852a"/>
-        <rect x="10" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.7)"/>
-        <rect x="18" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.7)"/>
-        <rect x="26" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.7)"/>
+        <rect x="10" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.8)"/>
+        <rect x="18" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.8)"/>
+        <rect x="26" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.8)"/>
         <circle cx="12" cy="38" r="4" fill="#0d2137"/>
         <circle cx="12" cy="38" r="2" fill="#4a6080"/>
         <circle cx="36" cy="38" r="4" fill="#0d2137"/>
         <circle cx="36" cy="38" r="2" fill="#4a6080"/>
-        <line x1="4" y1="28" x2="44" y2="28" stroke="#1a6e62" stroke-width="1.5"/>
       </svg>
       <div class="nav-logo-text">
         <span>Truman Enterprise</span>
         <span>Narrowboat Trust</span>
       </div>
     </a>
-    <button class="nav-hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="our-trips.html">Our Trips</a></li>
@@ -195,259 +44,157 @@
   </div>
 </nav>
 
-<!-- Hero Slider -->
-<div class="hero">
-  <div class="hero-slide" style="background-image:url('images/kingfisher.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/dsc-0579.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/volunteers-canal.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/passengers-lunch.jpg')"></div>
-  <div class="hero-slide" style="background-image:url('images/autherley-turn.jpg')"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">West Midlands · Since 1968</div>
-    <h1>Making the Waterways <em>Accessible</em> to Everyone</h1>
+<!-- Hero -->
+<section class="hero">
+  <img class="hero-img" src="images/autherley-turn.jpg" alt="Canal at Autherley">
+  <div class="hero-inner">
+    <div class="hero-tag">West Midlands &nbsp;·&nbsp; Since 1968</div>
+    <h1>Making Waterways<br><span>Accessible</span> to All</h1>
     <p>Day trips on the Staffordshire &amp; Worcestershire Canal for community groups, families and individuals — especially those who need us most.</p>
-    <div class="hero-actions">
-      <a href="booking-form.html" class="btn btn-primary btn-lg">Book a Trip</a>
-      <a href="our-trips.html" class="btn btn-outline btn-lg">Explore Trips</a>
+    <div class="hero-btns">
+      <a href="booking-form.html" class="btn btn-teal btn-lg">Book a Trip</a>
+      <a href="our-trips.html" class="btn btn-outline-white btn-lg">View Our Trips</a>
     </div>
   </div>
-  <div class="hero-dots">
-    <button class="hero-dot active"></button>
-    <button class="hero-dot"></button>
-    <button class="hero-dot"></button>
-    <button class="hero-dot"></button>
-    <button class="hero-dot"></button>
-  </div>
-</div>
-
-<!-- Stats Bar -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-number" data-target="50" data-suffix="+">50+</div>
-      <div class="stat-label">Years of Service</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-target="3">3</div>
-      <div class="stat-label">Canal Destinations</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-target="12">12</div>
-      <div class="stat-label">Passengers per Trip</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number" data-target="7">7</div>
-      <div class="stat-label">Days a Week, Apr–Oct</div>
-    </div>
-  </div>
-</div>
-
-<!-- About Section -->
-<section>
-  <div class="section-inner">
-    <div class="two-col">
-      <div>
-        <span class="section-eyebrow">Who We Are</span>
-        <h2 class="section-title">A Volunteer-Run Charity <em>Opening the Canal</em> to All</h2>
-        <div class="title-line"></div>
-        <p style="font-size:1.05rem; color:var(--text-mid); line-height:1.85; margin-bottom:20px; font-weight:300;">
-          We're a volunteer-run charity who has been offering canal trips to people across the West Midlands and beyond for over 50 years. We provide day trips for community and family groups, especially those with elderly, disabled, or special needs members, as well as individuals facing health challenges.
-        </p>
-        <p style="font-size:0.95rem; color:var(--text-light); line-height:1.8; margin-bottom:32px;">
-          Our narrowboat Enterprise starts from Hatherton Marina and cruises the beautiful Staffs &amp; Worcs Canal to Coven, Autherley Junction or Penkridge — each route a unique experience. A peaceful day on the water brings relaxation, connection, and enjoyment to all aboard.
-        </p>
-        <div class="features-list">
-          <div class="feature-item"><div class="feature-check">✓</div> Ramp &amp; hydraulic lift</div>
-          <div class="feature-item"><div class="feature-check">✓</div> Up to 12 passengers</div>
-          <div class="feature-item"><div class="feature-check">✓</div> Accessible toilet</div>
-          <div class="feature-item"><div class="feature-check">✓</div> Free hot &amp; cold drinks</div>
-          <div class="feature-item"><div class="feature-check">✓</div> Qualified skipper &amp; crew</div>
-          <div class="feature-item"><div class="feature-check">✓</div> Free secure parking</div>
-        </div>
-        <div style="margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;">
-          <a href="booking-form.html" class="btn btn-primary">Book a Trip</a>
-          <a href="our-trips.html" class="btn btn-outline-navy">View Trips</a>
-        </div>
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hero-stat">
+        <div class="hero-stat-num">50+</div>
+        <div class="hero-stat-label">Years of Service</div>
       </div>
-      <div>
-        <div class="img-frame" style="padding-bottom:24px; padding-right:24px;">
-          <img src="images/kingfisher.jpg" alt="Narrowboat Enterprise on the Staffs & Worcs Canal">
-          <div class="img-frame-badge">
-            <div class="num">70ft</div>
-            <div class="lbl">Canal Boat</div>
-          </div>
-        </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Canal Destinations</div>
       </div>
-    </div>
-
-    <div class="about-grid" style="margin-top:64px;">
-      <div class="about-card">
-        <div class="about-card-icon">🌿</div>
-        <h3>The Benefits</h3>
-        <p>A peaceful canal day brings relaxation and enjoyment to all, letting passengers and volunteers appreciate the history and scenery of the West Midlands region.</p>
+      <div class="hero-stat">
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">Passengers per Trip</div>
       </div>
-      <div class="about-card">
-        <div class="about-card-icon">📍</div>
-        <h3>Starting Point</h3>
-        <p>All trips depart from Hatherton Marina, WV10 7DT — with free secure parking and easy vehicle access close to the boat for passengers with mobility needs.</p>
-      </div>
-      <div class="about-card">
-        <div class="about-card-icon">♿</div>
-        <h3>Accessibility First</h3>
-        <p>Ramp, hydraulic lift, accessible toilet, and space for up to two wheelchair users. We'll do everything we can to accommodate your group's needs.</p>
-      </div>
-      <div class="about-card">
-        <div class="about-card-icon">🛡️</div>
-        <h3>Safety &amp; Expertise</h3>
-        <p>All skippers hold the NCBA Certificate in Community Boat Management. Enhanced DBS checks and £10m Public Liability Insurance on every trip.</p>
+      <div class="hero-stat">
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Days a Week, Apr–Oct</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Trips Overview -->
-<section class="bg-cream">
-  <div class="section-inner">
-    <div style="text-align:center;">
-      <span class="section-eyebrow">Three Great Routes</span>
-      <h2 class="section-title" style="max-width:560px; margin:0 auto 12px;">Choose Your <em>Perfect Trip</em></h2>
-      <div class="title-line" style="margin:14px auto 20px;"></div>
-      <p class="section-lead" style="max-width:560px; margin:0 auto 0;">All trips run April to October, 7 days a week. Starting from Hatherton Marina, Wolverhampton.</p>
-    </div>
-
-    <div class="trips-grid-home">
-      <div class="trip-summary-card">
-        <div class="trip-summary-top" style="background:linear-gradient(135deg,#1b3a5c,#2c5f8a);">
-          <div class="trip-icon">🍺</div>
-          <h3>Coven Trip</h3>
-          <div class="hours">5–5½ hours · Lunch stop included</div>
-        </div>
-        <div class="trip-summary-bottom">
-          <p>A leisurely round trip to the Anchor pub at Coven, with a 1–2 hour stop for lunch. Perfect for groups who want a relaxed, sociable day out.</p>
-          <div class="trip-price-row">
-            <div class="price">£110 <span style="font-size:0.85rem;font-family:'Inter',sans-serif;color:var(--text-light);font-weight:400;">per boat</span></div>
-            <a href="booking-form.html" class="btn btn-primary btn-sm">Book</a>
-          </div>
+<!-- About -->
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split-img">
+        <img src="images/kingfisher.jpg" alt="Narrowboat on the canal">
+        <div class="split-img-badge">
+          <div class="num">70ft</div>
+          <div class="lbl">Canal Boat</div>
         </div>
       </div>
-
-      <div class="trip-summary-card">
-        <div class="trip-summary-top" style="background:linear-gradient(135deg,#1a5c4e,#1a8a7a);">
-          <div class="trip-icon">⚓</div>
-          <h3>Autherley Trip</h3>
-          <div class="hours">6 hours · Junction cruise</div>
+      <div>
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-heading">A Volunteer-Run Charity Opening the Canal to All</h2>
+        <p class="section-sub">We've been offering canal trips to people across the West Midlands for over 50 years — especially those with elderly, disabled, or special needs members, and individuals facing health challenges.</p>
+        <div class="feature-list">
+          <div class="feature-item"><div class="feature-dot"></div> Ramp &amp; hydraulic lift</div>
+          <div class="feature-item"><div class="feature-dot"></div> Up to 12 passengers</div>
+          <div class="feature-item"><div class="feature-dot"></div> Accessible toilet on board</div>
+          <div class="feature-item"><div class="feature-dot"></div> Free hot &amp; cold drinks</div>
+          <div class="feature-item"><div class="feature-dot"></div> Qualified skipper &amp; crew</div>
+          <div class="feature-item"><div class="feature-dot"></div> Free secure parking</div>
         </div>
-        <div class="trip-summary-bottom">
-          <p>Cruise to the historic Autherley Junction with the Shropshire Union Canal. A non-stop journey with a brief stop to stretch your legs.</p>
-          <div class="trip-price-row">
-            <div class="price">£140 <span style="font-size:0.85rem;font-family:'Inter',sans-serif;color:var(--text-light);font-weight:400;">per boat</span></div>
-            <a href="booking-form.html" class="btn btn-primary btn-sm">Book</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="trip-summary-card">
-        <div class="trip-summary-top" style="background:linear-gradient(135deg,#5c3a1a,#9a6228);">
-          <div class="trip-icon">🔒</div>
-          <h3>Penkridge Trip</h3>
-          <div class="hours">8 hours · 12 locks</div>
-        </div>
-        <div class="trip-summary-bottom">
-          <p>The full adventure — 12 locks through beautiful Staffordshire countryside. Passengers can help operate locks or simply sit back and enjoy.</p>
-          <div class="trip-price-row">
-            <div class="price">£170 <span style="font-size:0.85rem;font-family:'Inter',sans-serif;color:var(--text-light);font-weight:400;">per boat</span></div>
-            <a href="booking-form.html" class="btn btn-primary btn-sm">Book</a>
-          </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="booking-form.html" class="btn btn-teal">Book a Trip</a>
+          <a href="our-trips.html" class="btn btn-outline-teal">Our Trips</a>
         </div>
       </div>
-    </div>
-
-    <div class="charity-strip">
-      <p>"Prices are per trip for the whole boat — up to 12 passengers. Food is not included. Trips run April to October, 7 days a week."</p>
-      <a href="our-trips.html" class="btn btn-primary" style="flex-shrink:0;">Full Trip Details</a>
     </div>
   </div>
 </section>
 
-<!-- Boat section -->
-<section>
-  <div class="section-inner">
-    <div class="two-col reverse">
+<!-- Trips -->
+<section class="section section-light">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
       <div>
-        <span class="section-eyebrow">Narrowboat Enterprise</span>
-        <h2 class="section-title">Nearly <em>50 Years</em> of Serving Our Community</h2>
-        <div class="title-line"></div>
-        <p style="font-size:1rem; color:var(--text-mid); line-height:1.85; margin-bottom:24px; font-weight:300;">
-          Originally built in 1978 by Cammell Laird apprentices, Enterprise has been specially adapted for passengers with mobility needs. She carries up to 12 passengers with ramp access, a hydraulic lift, large picture windows, central heating, and an accessible toilet — everything needed for a comfortable and safe day on the canal.
-        </p>
-        <div class="accordion">
-          <div class="accordion-item">
-            <button class="accordion-header">History of the Boat <span class="accordion-icon">+</span></button>
-            <div class="accordion-body">
-              <p>Built in 1978 as Symphony by Cammell Laird apprentices for the Peter Le Marchant Trust, incorporating materials from naval destroyers. Refurbished and renamed Walsall Enterprise in 1981 to offer outings for Walsall residents, then transferred to the HF Truman Trust in 2005. Renamed simply Enterprise in 2020, upgrades over the decades include new engines, lifts and facilities.</p>
-            </div>
+        <div class="section-label">Three Routes</div>
+        <h2 class="section-heading">Choose Your Trip</h2>
+        <p class="section-sub">All trips depart from Hatherton Marina, April to October, 7 days a week.</p>
+      </div>
+      <a href="our-trips.html" class="btn btn-outline-teal">See All Details</a>
+    </div>
+    <div class="trips-grid">
+      <div class="trip-card">
+        <div class="trip-card-tag">Most Popular</div>
+        <h3>Coven Trip</h3>
+        <p>A leisurely round trip to the Anchor pub at Coven, with a 1–2 hour lunch stop. Perfect for a relaxed, sociable day on the water.</p>
+        <div class="trip-card-footer">
+          <div>
+            <div class="trip-price">£110</div>
+            <div class="trip-meta">Per boat · 5–5½ hrs</div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-header">History of the Trust <span class="accordion-icon">+</span></button>
-            <div class="accordion-body">
-              <p>In 1965, dedicated youth leaders in Walsall raised funds for a narrowboat, leading to the launch of HF Truman in 1968. The group became the HF Truman Narrowboat Trust charity in 1992, moving to Hatherton Marina in 1981. Renamed Truman Enterprise Narrowboat Trust in 2006 after acquiring the 70ft Enterprise from Walsall MBC Social Services.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button class="accordion-header">Our Mission <span class="accordion-icon">+</span></button>
-            <div class="accordion-body">
-              <p>Our volunteers are passionate about the inland waterways of the West Midlands. We want to promote the benefits of a great day out on the canal to groups who might otherwise find it difficult to access the countryside. We care about our passengers and will try to accommodate everyone's needs.</p>
-            </div>
-          </div>
+          <a href="booking-form.html" class="btn btn-teal btn-sm">Book</a>
         </div>
       </div>
-      <div>
-        <img src="images/passengers-lunch.jpg" alt="Passengers enjoying lunch on narrowboat Enterprise" style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); display:block;">
+      <div class="trip-card">
+        <div class="trip-card-tag">Junction Cruise</div>
+        <h3>Autherley Trip</h3>
+        <p>Cruise to the historic Autherley Junction with the Shropshire Union Canal — a scenic non-stop journey with a brief stop en route.</p>
+        <div class="trip-card-footer">
+          <div>
+            <div class="trip-price">£140</div>
+            <div class="trip-meta">Per boat · 6 hrs</div>
+          </div>
+          <a href="booking-form.html" class="btn btn-teal btn-sm">Book</a>
+        </div>
+      </div>
+      <div class="trip-card">
+        <div class="trip-card-tag">Full Day</div>
+        <h3>Penkridge Trip</h3>
+        <p>The full adventure — 12 locks through beautiful Staffordshire countryside. Passengers can help operate locks or simply sit back and enjoy.</p>
+        <div class="trip-card-footer">
+          <div>
+            <div class="trip-price">£170</div>
+            <div class="trip-meta">Per boat · 8 hrs · 12 locks</div>
+          </div>
+          <a href="booking-form.html" class="btn btn-teal btn-sm">Book</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Testimonials -->
-<section class="bg-cream">
-  <div class="section-inner">
-    <div style="text-align:center;">
-      <span class="section-eyebrow">What People Say</span>
-      <h2 class="section-title" style="max-width:480px; margin:0 auto 12px;">Words from Our <em>Passengers</em></h2>
-      <div class="title-line" style="margin:14px auto 0;"></div>
-    </div>
+<section class="section">
+  <div class="container">
+    <div class="section-label">What People Say</div>
+    <h2 class="section-heading">Words from Our Passengers</h2>
     <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="quote-mark">"</div>
-        <p class="testimonial-text">We had a nice leisurely cruise through beautiful countryside, saw baby ducks, herons, geese. A beautiful way of getting together and spending time together while being on the canal. We all really enjoyed ourselves. Thank you very much for making it possible with the wheelchair.</p>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar">B</div>
+      <div class="testimonial">
+        <p>"We had a nice leisurely cruise through beautiful countryside, saw baby ducks, herons, geese. A beautiful way of getting together and spending time as a family. Thank you for making it possible with the wheelchair."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">B</div>
           <div>
-            <div class="testimonial-author">The B Family</div>
-            <div class="testimonial-role">Canal Trip — 2025</div>
+            <div class="t-name">The B Family</div>
+            <div class="t-role">Canal Trip — 2025</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="quote-mark">"</div>
-        <p class="testimonial-text">From first contact, all the way through to the day itself and safe arrival back at the marina, everything has been perfect — wonderful beyond words. You've enabled us to form a special collective memory.</p>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar">R</div>
+      <div class="testimonial">
+        <p>"From first contact all the way through to safe arrival back at the marina, everything has been perfect — wonderful beyond words. You've enabled us to form a special collective memory."</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">R</div>
           <div>
-            <div class="testimonial-author">Rachel &amp; Family</div>
-            <div class="testimonial-role">Canal Trip — 2025</div>
+            <div class="t-name">Rachel &amp; Family</div>
+            <div class="t-role">Canal Trip — 2025</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
-        <div class="quote-mark">"</div>
-        <p class="testimonial-text">Thank you for a lovely trip. We've never been before, so it was a great experience seeing how the locks work. Lovely friendly crew and excellent scones.</p>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar">S</div>
+      <div class="testimonial">
+        <p>"Thank you for a lovely trip. We've never been before, so it was a great experience seeing how the locks work. Lovely friendly crew and excellent scones!"</p>
+        <div class="testimonial-author">
+          <div class="t-avatar">S</div>
           <div>
-            <div class="testimonial-author">SC Retirement Living</div>
-            <div class="testimonial-role">Canal Trip — 2025</div>
+            <div class="t-name">SC Retirement Living</div>
+            <div class="t-role">Canal Trip — 2025</div>
           </div>
         </div>
       </div>
@@ -456,29 +203,23 @@
 </section>
 
 <!-- CTA -->
-<div class="cta-banner">
-  <div class="section-inner" style="position:relative; z-index:1;">
-    <span class="section-eyebrow" style="color:rgba(240,192,96,0.8);">Ready to Join Us?</span>
-    <h2>Book Your Day on the Canal</h2>
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready for a Day on the Canal?</h2>
     <p>Trips run April to October from Hatherton Marina, Wolverhampton (WV10 7DT)</p>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-      <a href="our-trips.html" class="btn btn-outline btn-lg">View Trips &amp; Diary</a>
-      <a href="booking-form.html" class="btn btn-gold btn-lg">Book Now</a>
+    <div class="cta-banner-btns">
+      <a href="our-trips.html" class="btn btn-outline-white btn-lg">View Trips &amp; Diary</a>
+      <a href="booking-form.html" class="btn btn-lg" style="background:white; color:var(--teal);">Book Now</a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- Footer -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-cta-strip">
-      <div class="footer-cta-strip-text">
-        <h3>Truman Enterprise Narrowboat Trust</h3>
-        <p>Making waterways accessible to everyone since 1968 — Registered Charity No. 1037914</p>
-      </div>
-    </div>
     <div class="footer-grid">
       <div class="footer-brand">
+        <div class="footer-brand-name">Truman Enterprise Narrowboat Trust</div>
         <p>A volunteer-run charity providing accessible canal boat day trips for elderly, disabled and community groups across the West Midlands since 1968.</p>
         <span class="footer-charity-no">Registered Charity No. 1037914</span>
       </div>
@@ -497,11 +238,11 @@
         <h4>Contact Us</h4>
         <a href="tel:07895053090">07895 053090</a>
         <a href="mailto:enterprise@truman-enterprise.org.uk">enterprise@truman-enterprise.org.uk</a>
-        <p class="footer-address" style="margin-top:14px;">Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton WV10 7DT</p>
+        <p style="margin-top:14px;">Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton WV10 7DT</p>
       </div>
       <div class="footer-col">
         <h4>Season</h4>
-        <p>Trips run <strong style="color:rgba(255,255,255,0.7);">April to October</strong>, 7 days a week, from Hatherton Marina.</p>
+        <p>Trips run <strong style="color:rgba(255,255,255,0.65);">April to October</strong>, 7 days a week, from Hatherton Marina.</p>
         <p style="margin-top:16px;"><span class="ncba-badge">🚢 NCBA Member</span></p>
       </div>
     </div>
@@ -511,8 +252,6 @@
     </div>
   </div>
 </footer>
-
-
 
 <script src="js/main.js"></script>
 </body>
