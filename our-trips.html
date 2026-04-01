@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Trips — Truman Enterprise Narrowboat Trust</title>
+  <meta name="description" content="Day trips along the Staffs & Worcs Canal to Coven, Autherley Junction or Penkridge. Accessible narrowboat, trips April to October.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .trips-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: start;
+    }
+    .booking-side-panel { position: sticky; top: 88px; }
+    @media (max-width: 960px) {
+      .trips-page-layout { grid-template-columns: 1fr; }
+      .booking-side-panel { position: static; }
+    }
+    .how-to-book-steps { margin-top: 20px; }
+    .step {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      background: var(--teal);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    .step-text { font-family: sans-serif; font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    .step-text strong { color: var(--navy); }
+
+    .location-map-placeholder {
+      background: #e8f0f7;
+      border-radius: 8px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-family: sans-serif;
+      text-align: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="28" width="40" height="10" rx="2" fill="#1a7a6e"/>
+        <rect x="8" y="22" width="28" height="8" rx="1" fill="#c8952a"/>
+        <rect x="16" y="16" width="16" height="8" rx="1" fill="#c8952a"/>
+        <rect x="10" y="24" width="4" height="4" fill="#e8f4f8"/>
+        <rect x="18" y="24" width="4" height="4" fill="#e8f4f8"/>
+        <rect x="26" y="24" width="4" height="4" fill="#e8f4f8"/>
+        <circle cx="12" cy="38" r="4" fill="#1b3a5c"/>
+        <circle cx="12" cy="38" r="2" fill="#ddd"/>
+        <circle cx="36" cy="38" r="4" fill="#1b3a5c"/>
+        <circle cx="36" cy="38" r="2" fill="#ddd"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span>Truman Enterprise</span>
+        <span>Narrowboat Trust</span>
+      </div>
+    </a>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="our-trips.html" class="active">Our Trips</a></li>
+      <li><a href="get-involved.html">Get Involved</a></li>
+      <li><a href="support.html">Support Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking-form.html" class="nav-cta">Book a Trip</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero" style="background-image: url('images/Autherley turn.jpg')">
+  <div class="page-hero-content">
+    <h1>Our Trips</h1>
+    <p>Three beautiful routes along the Staffs &amp; Worcs Canal — April to October</p>
+  </div>
+</div>
+
+<!-- Main Content -->
+<section>
+  <div class="section-inner">
+    <div class="trips-page-layout">
+
+      <!-- Left: Trip Details -->
+      <div>
+        <div class="section-label">Destinations</div>
+        <h2 class="section-title">Choose Your Trip</h2>
+        <p class="section-lead">We run trips to 3 destinations on the Staffs and Worcs Canal. All trips start and finish at Hatherton Marina, Queens Road, Calf Heath, Wolverhampton WV10 7DT. Trips run April to October, 7 days a week.</p>
+
+        <!-- Trip Cards -->
+        <div style="display:flex; flex-direction:column; gap:28px; margin-top:8px;">
+
+          <!-- Coven -->
+          <div class="trip-card">
+            <div class="trip-card-header" style="background: linear-gradient(135deg, #1b3a5c, #2c5f8a);">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                  <h3>🍺 Coven Trip</h3>
+                  <p style="color:rgba(255,255,255,0.8); font-family:sans-serif; font-size:0.88rem; margin-top:4px;">Most popular destination</p>
+                </div>
+                <div class="price">£110</div>
+              </div>
+            </div>
+            <div class="trip-card-body">
+              <p>A 5 or 5½ hour round trip to the Anchor pub at Coven, including a 1–1½ hour stop for lunch.</p>
+              <div class="trip-detail"><span class="trip-detail-icon">⏱</span> <strong>Duration:</strong>&nbsp;5–5½ hours</div>
+              <div class="trip-detail"><span class="trip-detail-icon">👥</span> <strong>Capacity:</strong>&nbsp;Up to 12 passengers</div>
+              <div class="trip-detail"><span class="trip-detail-icon">💷</span> <strong>Cost:</strong>&nbsp;£110 for the whole boat</div>
+
+              <table class="lunch-options-table" style="margin-top:16px;">
+                <thead>
+                  <tr><th>Lunch Option</th><th>Timings</th><th>Stop</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Own food</td><td>10:30am – 3:30pm</td><td>1 hour</td></tr>
+                  <tr><td>Fish &amp; chips (cash)</td><td>10:30am – 3:30pm</td><td>1 hour</td></tr>
+                  <tr><td>Pub meal at the Anchor</td><td>10:30am – 4:00pm</td><td>2 hours</td></tr>
+                </tbody>
+              </table>
+              <div class="trip-note">ℹ️ Price does not include food. Fish &amp; chips not available on Sundays.</div>
+              <div style="margin-top:16px;"><a href="booking-form.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.85rem;">Book This Trip</a></div>
+            </div>
+          </div>
+
+          <!-- Autherley -->
+          <div class="trip-card">
+            <div class="trip-card-header" style="background: linear-gradient(135deg, #1a5c4e, #1a7a6e);">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                  <h3>⚓ Autherley Trip</h3>
+                  <p style="color:rgba(255,255,255,0.8); font-family:sans-serif; font-size:0.88rem; margin-top:4px;">Junction cruise</p>
+                </div>
+                <div class="price">£140</div>
+              </div>
+            </div>
+            <div class="trip-card-body">
+              <p>A non-stop 6 hour round trip to Autherley Junction with the Shropshire Union Canal, including a stop to stretch your legs if time permits.</p>
+              <div class="trip-detail"><span class="trip-detail-icon">⏱</span> <strong>Duration:</strong>&nbsp;6 hours</div>
+              <div class="trip-detail"><span class="trip-detail-icon">👥</span> <strong>Capacity:</strong>&nbsp;Up to 12 passengers</div>
+              <div class="trip-detail"><span class="trip-detail-icon">💷</span> <strong>Cost:</strong>&nbsp;£140 for the whole boat</div>
+
+              <table class="lunch-options-table" style="margin-top:16px;">
+                <thead>
+                  <tr><th>Lunch Option</th><th>Timings</th><th>Stop</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Own food</td><td>10:30am – 4:30pm</td><td>20 mins</td></tr>
+                  <tr><td>Fish &amp; chips (cash)</td><td>10:30am – 4:30pm</td><td>20 mins</td></tr>
+                </tbody>
+              </table>
+              <div class="trip-note">ℹ️ Price does not include food. Fish &amp; chips not available on Sundays.</div>
+              <div style="margin-top:16px;"><a href="booking-form.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.85rem;">Book This Trip</a></div>
+            </div>
+          </div>
+
+          <!-- Penkridge -->
+          <div class="trip-card">
+            <div class="trip-card-header" style="background: linear-gradient(135deg, #5c3a1a, #9a6228);">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                  <h3>🔒 Penkridge Trip</h3>
+                  <p style="color:rgba(255,255,255,0.8); font-family:sans-serif; font-size:0.88rem; margin-top:4px;">Adventure through 12 locks</p>
+                </div>
+                <div class="price">£170</div>
+              </div>
+            </div>
+            <div class="trip-card-body">
+              <p>An 8-hour non-stop round trip to Penkridge, passing through 12 locks. Energetic passengers can experience mooring, steering and lock operation — or just sit back, relax and let the crew do all the work!</p>
+              <div class="trip-detail"><span class="trip-detail-icon">⏱</span> <strong>Duration:</strong>&nbsp;8 hours</div>
+              <div class="trip-detail"><span class="trip-detail-icon">🔒</span> <strong>Locks:</strong>&nbsp;12 locks</div>
+              <div class="trip-detail"><span class="trip-detail-icon">👥</span> <strong>Capacity:</strong>&nbsp;Up to 12 passengers</div>
+              <div class="trip-detail"><span class="trip-detail-icon">💷</span> <strong>Cost:</strong>&nbsp;£170 for the whole boat</div>
+
+              <table class="lunch-options-table" style="margin-top:16px;">
+                <thead>
+                  <tr><th>Lunch Option</th><th>Timings</th><th>Stop</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Own food</td><td>9:30am – 5:30pm</td><td>Non-stop</td></tr>
+                  <tr><td>Take-away (Cross Keys pub)</td><td>9:30am – 5:30pm</td><td>Non-stop</td></tr>
+                </tbody>
+              </table>
+              <div class="trip-note">ℹ️ Price does not include food.</div>
+              <div style="margin-top:16px;"><a href="booking-form.html" class="btn btn-primary" style="padding:10px 20px; font-size:0.85rem;">Book This Trip</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion: Our Boat, Safety -->
+        <div style="margin-top:48px;">
+          <div class="section-label">More Information</div>
+          <h2 class="section-title">What to Expect</h2>
+          <div class="accordion">
+            <div class="accordion-item">
+              <button class="accordion-header">🚢 Our Boat — Narrowboat Enterprise <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p>Narrowboat Enterprise is a 70ft canal boat designed especially for carrying passengers with mobility issues. It has:</p>
+                <ul>
+                  <li>Ramps &amp; hydraulic passenger lift</li>
+                  <li>Seating for up to 12 passengers (minimum 2 leaders/staff required)</li>
+                  <li>Large open front deck</li>
+                  <li>Small kitchen with fridge &amp; 2 gas burners</li>
+                  <li>Large open cabin with deep picture windows</li>
+                  <li>Central heating</li>
+                  <li>Accessible toilet</li>
+                  <li>Free hot &amp; cold drinks for all passengers</li>
+                  <li>Qualified skipper and crew member on every trip</li>
+                  <li>Free secure parking at the Marina</li>
+                </ul>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">🛡️ Safety &amp; Crew Competency <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <h4>Crew Competency</h4>
+                <p>Each trip has a skipper and crew member who have passed the appropriate course accredited by the National Community Boats Association (NCBA). All Trust skippers hold the Certificate in Community Boat Management (CCBM). Crew members hold a Community Crew Course (CCC) certificate. All crew undertake update training annually.</p>
+                <h4>DBS Checks</h4>
+                <p>The designated skipper and crew on every trip are required to undergo an enhanced DBS check.</p>
+                <h4>Risk Assessments</h4>
+                <p>The Trust undertakes risk assessments which are regularly reviewed. Risk assessments are available on request.</p>
+                <h4>Insurance</h4>
+                <p>The Trust carries Public and Employer Liability Insurance of £10,000,000 in each instance. Our current insurance certificate is on display on board the Enterprise.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-header">💳 How to Pay <span class="accordion-icon">+</span></button>
+              <div class="accordion-body">
+                <p>Payment may be made by <strong>cheque</strong> or by <strong>BACS</strong> — details will be shown on your invoice.</p>
+                <p>For BACS payments, please refer to your invoice for our bank details and quote your invoice number or trip date to ensure your payment is allocated correctly.</p>
+                <p><strong>Payment is due 28 days before each trip.</strong> Receipts are available on request.</p>
+                <p style="margin-top:12px;">For any queries about payments, contact Chris Rogers:<br>
+                  📞 <a href="tel:07763214524" style="color:var(--teal);">07763 214524</a><br>
+                  ✉️ <a href="mailto:treasurer@truman-enterprise.org.uk" style="color:var(--teal);">treasurer@truman-enterprise.org.uk</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Calendar + How to Book -->
+      <div class="booking-side-panel">
+        <div class="section-label">Availability</div>
+        <h3 style="color:var(--navy); font-size:1.2rem; margin-bottom:16px;">Trip Diary</h3>
+        <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); margin-bottom:20px;">Check dates below, then complete the booking form. Green dates are available — click to start your booking.</p>
+
+        <div class="calendar-wrapper" id="booking-calendar">
+          <div class="calendar-header">
+            <button class="cal-nav-btn cal-prev">&#8249;</button>
+            <h3 class="cal-month-label">Loading...</h3>
+            <button class="cal-nav-btn cal-next">&#8250;</button>
+          </div>
+          <div class="calendar-grid">
+            <div class="calendar-weekdays">
+              <div>Mo</div><div>Tu</div><div>We</div>
+              <div>Th</div><div>Fr</div><div>Sa</div><div>Su</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+          <div class="calendar-legend">
+            <div class="legend-item"><div class="legend-dot available"></div> Available</div>
+            <div class="legend-item"><div class="legend-dot provisional"></div> Provisional</div>
+            <div class="legend-item"><div class="legend-dot booked"></div> Booked</div>
+          </div>
+        </div>
+
+        <div id="booking-section" style="margin-top:28px;">
+          <div style="background:white; border-radius:10px; padding:24px; box-shadow:var(--shadow);">
+            <h4 style="color:var(--navy); margin-bottom:16px; font-size:1rem;">How to Book</h4>
+            <div class="how-to-book-steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-text">Check the <strong>calendar</strong> above for your preferred date</div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-text">Complete the <strong><a href="booking-form.html" style="color:var(--teal);">online booking form</a></strong></div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-text">Read and agree to the <strong>Terms &amp; Conditions</strong></div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-text">Your trip will be <strong>confirmed by e-mail</strong> with an invoice</div>
+              </div>
+            </div>
+            <hr class="divider" style="margin:16px 0;">
+            <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-light); margin-bottom:8px;"><strong style="color:var(--navy);">Phone:</strong></p>
+            <p style="font-family:sans-serif; font-size:1rem; color:var(--navy); font-weight:bold; margin-bottom:8px;"><a href="tel:07895053090" style="color:var(--navy); text-decoration:none;">07895 053090</a></p>
+            <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-light); margin-bottom:4px;"><strong style="color:var(--navy);">Email:</strong></p>
+            <p style="font-family:sans-serif; font-size:0.8rem;"><a href="mailto:enterprise@truman-enterprise.org.uk" style="color:var(--teal);">enterprise@truman-enterprise.org.uk</a></p>
+            <div style="margin-top:16px;">
+              <a href="booking-form.html" class="btn btn-primary" style="width:100%; text-align:center; display:block; padding:12px;">Book Online</a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div style="background:white; border-radius:10px; padding:24px; box-shadow:var(--shadow); margin-top:20px;">
+            <h4 style="color:var(--navy); margin-bottom:12px; font-size:1rem;">📍 Where We Are</h4>
+            <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); line-height:1.6;">
+              Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton<br><strong style="color:var(--navy);">WV10 7DT</strong>
+            </p>
+            <div class="what3words" style="margin-top:10px; display:inline-flex;">
+              ///&nbsp;clarifies.overhead.paths
+            </div>
+            <div class="location-map-placeholder">
+              <div style="font-size:2rem;">🗺️</div>
+              <div>
+                <strong>Hatherton Marina</strong><br>
+                <small>WV10 7DT</small>
+              </div>
+              <a href="https://maps.google.com/?q=Hatherton+Marina+Queens+Road+Calf+Heath+Wolverhampton+WV10+7DT" target="_blank" class="btn btn-primary" style="padding:8px 16px; font-size:0.8rem; margin-top:8px;">Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Truman Enterprise Narrowboat Trust</h3>
+        <p>A volunteer-run charity providing accessible canal boat day trips for elderly, disabled and community groups across the West Midlands since 1968.</p>
+        <span class="footer-charity-no">Registered Charity No. 1037914</span>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-trips.html">Our Trips</a></li>
+          <li><a href="booking-form.html">Book a Trip</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="support.html">Support Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:07895053090" style="color:rgba(255,255,255,0.6); text-decoration:none;">07895 053090</a></p>
+        <p>✉️ <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.78rem;">enterprise@truman-enterprise.org.uk</a></p>
+        <p style="margin-top:12px;">📍 Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton WV10 7DT</p>
+      </div>
+      <div class="footer-col">
+        <h4>Season</h4>
+        <p>Trips run from <strong style="color:white;">April to October</strong>, 7 days a week.</p>
+        <p style="margin-top:12px;"><span class="ncba-badge">🚢 NCBA Member</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Truman Enterprise Narrowboat Trust. Registered Charity No. 1037914.</p>
+      <p>Member of the National Community Boats Association</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

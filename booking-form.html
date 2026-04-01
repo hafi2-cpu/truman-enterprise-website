@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Trip — Truman Enterprise Narrowboat Trust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none">
+        <rect x="4" y="28" width="40" height="10" rx="2" fill="#1a7a6e"/>
+        <rect x="8" y="22" width="28" height="8" rx="1" fill="#c8952a"/>
+        <rect x="16" y="16" width="16" height="8" rx="1" fill="#c8952a"/>
+        <rect x="10" y="24" width="4" height="4" fill="#e8f4f8"/>
+        <rect x="18" y="24" width="4" height="4" fill="#e8f4f8"/>
+        <rect x="26" y="24" width="4" height="4" fill="#e8f4f8"/>
+        <circle cx="12" cy="38" r="4" fill="#1b3a5c"/>
+        <circle cx="12" cy="38" r="2" fill="#ddd"/>
+        <circle cx="36" cy="38" r="4" fill="#1b3a5c"/>
+        <circle cx="36" cy="38" r="2" fill="#ddd"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span>Truman Enterprise</span>
+        <span>Narrowboat Trust</span>
+      </div>
+    </a>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="our-trips.html">Our Trips</a></li>
+      <li><a href="get-involved.html">Get Involved</a></li>
+      <li><a href="support.html">Support Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking-form.html" class="nav-cta active">Book a Trip</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero" style="background-image: url('images/HAG 13 Aug 2016 -1 (002).JPG')">
+  <div class="page-hero-content">
+    <h1>Book a Trip</h1>
+    <p>Complete the form below to request your canal boat day out</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <div class="booking-layout">
+
+      <!-- Booking Form -->
+      <div class="form-card">
+        <h2>Trip Booking Request</h2>
+        <p class="form-subtitle">You can book up to 6 trips on this form. We'll confirm your booking by email and send an invoice.</p>
+        <p class="required-note"><span>*</span> Required fields</p>
+
+        <form id="booking-form" novalidate>
+
+          <div class="form-section-title">Your Details</div>
+
+          <div class="form-group">
+            <label for="group_name">Group / Organisation Name <span style="color:var(--red)">*</span></label>
+            <input type="text" id="group_name" name="group_name" required placeholder="e.g. Sunflower Day Centre">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact_name">Contact Name <span style="color:var(--red)">*</span></label>
+              <input type="text" id="contact_name" name="contact_name" required placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span style="color:var(--red)">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="07xxx xxxxxx">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Postal Address <span style="color:var(--red)">*</span></label>
+            <textarea id="address" name="address" rows="3" required placeholder="Street, Town, Postcode"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span style="color:var(--red)">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-section-title">Contact on the Day of Trip</div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="day_contact">Name of Contact on Day</label>
+              <input type="text" id="day_contact" name="day_contact" placeholder="If different from above">
+            </div>
+            <div class="form-group">
+              <label for="day_mobile">Mobile Number (optional)</label>
+              <input type="tel" id="day_mobile" name="day_mobile" placeholder="07xxx xxxxxx">
+            </div>
+          </div>
+
+          <div class="form-section-title">Your Trip Choices</div>
+          <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); margin-bottom:20px;">
+            Please check the <a href="our-trips.html#booking-calendar" style="color:var(--teal);">availability calendar</a> before selecting your dates. Trips run April–October.
+          </p>
+
+          <!-- Trip rows 1–6 -->
+          <div id="trip-rows">
+
+            <div class="trip-row">
+              <div class="trip-row-header"><div class="trip-row-num">1</div> Trip 1</div>
+              <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label>Date</label>
+                  <input type="date" name="trip1_date">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label>Destination</label>
+                  <select name="trip1_dest">
+                    <option value="">— Select —</option>
+                    <option value="Coven £110">Coven (£110)</option>
+                    <option value="Autherley £140">Autherley (£140)</option>
+                    <option value="Penkridge £170">Penkridge (£170)</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label>Lunch Option</label>
+                  <select name="trip1_lunch">
+                    <option value="">— Select —</option>
+                    <option value="Own food">Own food</option>
+                    <option value="Fish & chips">Fish &amp; chips</option>
+                    <option value="Pub lunch">Pub lunch (Coven only)</option>
+                    <option value="Cross Keys take-away">Cross Keys take-away (Penkridge)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="trip-row">
+              <div class="trip-row-header"><div class="trip-row-num">2</div> Trip 2</div>
+              <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="form-group" style="margin-bottom:0;"><label>Date</label><input type="date" name="trip2_date"></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Destination</label><select name="trip2_dest"><option value="">— Select —</option><option value="Coven £110">Coven (£110)</option><option value="Autherley £140">Autherley (£140)</option><option value="Penkridge £170">Penkridge (£170)</option></select></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Lunch Option</label><select name="trip2_lunch"><option value="">— Select —</option><option value="Own food">Own food</option><option value="Fish & chips">Fish &amp; chips</option><option value="Pub lunch">Pub lunch (Coven only)</option><option value="Cross Keys take-away">Cross Keys take-away (Penkridge)</option></select></div>
+              </div>
+            </div>
+
+            <div class="trip-row">
+              <div class="trip-row-header"><div class="trip-row-num">3</div> Trip 3</div>
+              <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="form-group" style="margin-bottom:0;"><label>Date</label><input type="date" name="trip3_date"></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Destination</label><select name="trip3_dest"><option value="">— Select —</option><option value="Coven £110">Coven (£110)</option><option value="Autherley £140">Autherley (£140)</option><option value="Penkridge £170">Penkridge (£170)</option></select></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Lunch Option</label><select name="trip3_lunch"><option value="">— Select —</option><option value="Own food">Own food</option><option value="Fish & chips">Fish &amp; chips</option><option value="Pub lunch">Pub lunch (Coven only)</option><option value="Cross Keys take-away">Cross Keys take-away (Penkridge)</option></select></div>
+              </div>
+            </div>
+
+            <div class="trip-row">
+              <div class="trip-row-header"><div class="trip-row-num">4</div> Trip 4</div>
+              <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="form-group" style="margin-bottom:0;"><label>Date</label><input type="date" name="trip4_date"></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Destination</label><select name="trip4_dest"><option value="">— Select —</option><option value="Coven £110">Coven (£110)</option><option value="Autherley £140">Autherley (£140)</option><option value="Penkridge £170">Penkridge (£170)</option></select></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Lunch Option</label><select name="trip4_lunch"><option value="">— Select —</option><option value="Own food">Own food</option><option value="Fish & chips">Fish &amp; chips</option><option value="Pub lunch">Pub lunch (Coven only)</option><option value="Cross Keys take-away">Cross Keys take-away (Penkridge)</option></select></div>
+              </div>
+            </div>
+
+            <div class="trip-row">
+              <div class="trip-row-header"><div class="trip-row-num">5</div> Trip 5</div>
+              <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="form-group" style="margin-bottom:0;"><label>Date</label><input type="date" name="trip5_date"></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Destination</label><select name="trip5_dest"><option value="">— Select —</option><option value="Coven £110">Coven (£110)</option><option value="Autherley £140">Autherley (£140)</option><option value="Penkridge £170">Penkridge (£170)</option></select></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Lunch Option</label><select name="trip5_lunch"><option value="">— Select —</option><option value="Own food">Own food</option><option value="Fish & chips">Fish &amp; chips</option><option value="Pub lunch">Pub lunch (Coven only)</option><option value="Cross Keys take-away">Cross Keys take-away (Penkridge)</option></select></div>
+              </div>
+            </div>
+
+            <div class="trip-row">
+              <div class="trip-row-header"><div class="trip-row-num">6</div> Trip 6</div>
+              <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;">
+                <div class="form-group" style="margin-bottom:0;"><label>Date</label><input type="date" name="trip6_date"></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Destination</label><select name="trip6_dest"><option value="">— Select —</option><option value="Coven £110">Coven (£110)</option><option value="Autherley £140">Autherley (£140)</option><option value="Penkridge £170">Penkridge (£170)</option></select></div>
+                <div class="form-group" style="margin-bottom:0;"><label>Lunch Option</label><select name="trip6_lunch"><option value="">— Select —</option><option value="Own food">Own food</option><option value="Fish & chips">Fish &amp; chips</option><option value="Pub lunch">Pub lunch (Coven only)</option><option value="Cross Keys take-away">Cross Keys take-away (Penkridge)</option></select></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-section-title">Confirmation</div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I have read and agree to the <a href="#" style="color:var(--teal);">Terms and Conditions</a>. I understand that payment is due 28 days before each trip and the price does not include food. <span style="color:var(--red);">*</span></label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="photos" name="photos">
+            <label for="photos">I am happy for photos to be taken of our group during the trip, which may be used in the Trust's publicity materials.</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; padding:16px; font-size:1rem; margin-top:8px;">
+            Submit Booking Request
+          </button>
+
+          <div class="success-message" style="display:none;">
+            ✅ Thank you! Your booking request has been prepared. Please send the email that has opened in your mail app, or contact us directly at <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:var(--teal);">enterprise@truman-enterprise.org.uk</a> or <a href="tel:07895053090" style="color:var(--teal);">07895 053090</a>.
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Side Info Panel -->
+      <div>
+        <div style="background:var(--navy); color:white; border-radius:12px; padding:32px; margin-bottom:24px;">
+          <h3 style="font-size:1.2rem; margin-bottom:20px; color:white;">Trip Prices</h3>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1);">
+              <div>
+                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🍺 Coven</div>
+                <div style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.6);">5–5½ hours</div>
+              </div>
+              <div style="color:var(--gold); font-size:1.3rem; font-weight:bold;">£110</div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1);">
+              <div>
+                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">⚓ Autherley</div>
+                <div style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.6);">6 hours</div>
+              </div>
+              <div style="color:var(--gold); font-size:1.3rem; font-weight:bold;">£140</div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🔒 Penkridge</div>
+                <div style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.6);">8 hours · 12 locks</div>
+              </div>
+              <div style="color:var(--gold); font-size:1.3rem; font-weight:bold;">£170</div>
+            </div>
+          </div>
+          <p style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:16px; border-top:1px solid rgba(255,255,255,0.1); padding-top:12px;">
+            Prices are per trip for up to 12 passengers. Minimum 2 group leaders/staff required. Food costs are not included.
+          </p>
+        </div>
+
+        <div style="background:white; border-radius:12px; padding:28px; box-shadow:var(--shadow); margin-bottom:24px;">
+          <h3 style="font-size:1rem; color:var(--navy); margin-bottom:16px;">Need Help Booking?</h3>
+          <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); margin-bottom:16px; line-height:1.6;">If you have any queries about your trip or completing this form, please contact our bookings secretary:</p>
+          <div class="contact-item" style="margin-bottom:10px;">
+            <span class="contact-icon">📞</span>
+            <a href="tel:07895053090" style="color:var(--navy); font-family:sans-serif; font-size:0.9rem; font-weight:600; text-decoration:none;">07895 053090</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:var(--teal); font-family:sans-serif; font-size:0.82rem; text-decoration:none;">enterprise@truman-enterprise.org.uk</a>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <strong>📅 Season:</strong> Trips run April to October, 7 days a week.<br><br>
+          <strong>💳 Payment:</strong> Due 28 days before each trip. Payable by cheque or BACS (details on invoice).<br><br>
+          <strong>📍 Start point:</strong> Hatherton Marina, Queens Road, Calf Heath, Wolverhampton WV10 7DT.<br><br>
+          <strong>♿ Accessibility:</strong> Up to 2 wheelchair users per trip. Ramp and hydraulic lift available.
+        </div>
+
+        <div style="background:white; border-radius:12px; padding:28px; box-shadow:var(--shadow); margin-top:24px;">
+          <h3 style="font-size:1rem; color:var(--navy); margin-bottom:12px;">📍 Getting Here</h3>
+          <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); line-height:1.7;">
+            Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton <strong>WV10 7DT</strong>
+          </p>
+          <div class="what3words" style="display:inline-flex; margin-top:8px;">///&nbsp;clarifies.overhead.paths</div>
+          <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-light); margin-top:12px;">Free secure parking available at the Marina. Vehicles can offload near the boat.</p>
+          <a href="https://maps.google.com/?q=Hatherton+Marina+Queens+Road+Calf+Heath+Wolverhampton+WV10+7DT" target="_blank" class="btn btn-primary" style="margin-top:12px; padding:10px 16px; font-size:0.85rem; display:inline-block;">
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Truman Enterprise Narrowboat Trust</h3>
+        <p>A volunteer-run charity providing accessible canal boat day trips since 1968.</p>
+        <span class="footer-charity-no">Registered Charity No. 1037914</span>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-trips.html">Our Trips</a></li>
+          <li><a href="booking-form.html">Book a Trip</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="support.html">Support Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:07895053090" style="color:rgba(255,255,255,0.6); text-decoration:none;">07895 053090</a></p>
+        <p>✉️ <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.78rem;">enterprise@truman-enterprise.org.uk</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Season</h4>
+        <p>Trips run <strong style="color:white;">April to October</strong>, 7 days a week.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Truman Enterprise Narrowboat Trust. Registered Charity No. 1037914.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
