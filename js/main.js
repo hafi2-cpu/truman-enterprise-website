@@ -239,7 +239,7 @@ function buildEmailBody(data) {
   body += `Day-of Contact: ${data.get('day_contact') || ''}\n`;
   body += `Day-of Mobile: ${data.get('day_mobile') || ''}\n\n`;
   body += 'TRIPS REQUESTED:\n';
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 3; i++) {
     const date = data.get(`trip${i}_date`);
     const dest = data.get(`trip${i}_dest`);
     const lunch = data.get(`trip${i}_lunch`);
