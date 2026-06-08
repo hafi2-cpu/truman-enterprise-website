@@ -1432,7 +1432,7 @@ section { padding: 80px 24px; }
 /* ===== FOOTER ===== */
 footer {
   background: #1c3a5c;
-  color: #d4e8f8;
+  color: #eef5fb;
   border-top: 4px solid var(--gold);
 }
 
@@ -1462,7 +1462,7 @@ footer {
 
 .footer-cta-strip-text p {
   font-size: 0.95rem;
-  color: #b8d8f0;
+  color: #daeaf7;
   line-height: 1.6;
 }
 
@@ -1479,7 +1479,7 @@ footer {
   font-size: 1rem;
   line-height: 1.9;
   margin-bottom: 20px;
-  color: #c0daef;
+  color: #ddeaf7;
 }
 
 .footer-charity-no {
@@ -1504,7 +1504,7 @@ footer {
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 13px; }
 .footer-col ul li a {
-  color: #e0f0fc;
+  color: #f2f8ff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
@@ -1516,11 +1516,11 @@ footer {
   font-size: 1rem;
   margin-bottom: 12px;
   line-height: 1.8;
-  color: #c0daef;
+  color: #ddeaf7;
 }
 
 .footer-col a {
-  color: #e0f0fc;
+  color: #f2f8ff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
@@ -1532,7 +1532,7 @@ footer {
 
 .footer-address {
   font-size: 1rem;
-  color: #c0daef;
+  color: #ddeaf7;
   line-height: 2;
   margin-top: 6px;
 }
@@ -1548,7 +1548,7 @@ footer {
   border-top: none;
 }
 
-.footer-bottom p { font-size: 0.88rem; color: #a0c4e0; line-height: 1.6; }
+.footer-bottom p { font-size: 0.88rem; color: #ccdff0; line-height: 1.6; }
 
 .ncba-badge {
   display: inline-flex; align-items: center; gap: 6px;

@@ -554,7 +554,7 @@ h2.section-heading {
 /* ===== FOOTER ===== */
 footer {
   background: #1c3a5c;
-  color: #d4e8f8;
+  color: #eef5fb;
   border-top: 4px solid var(--gold, #b8852a);
 }
 
@@ -583,7 +583,7 @@ footer {
   font-size: 1rem;
   line-height: 1.9;
   margin-bottom: 20px;
-  color: #c0daef;
+  color: #ddeaf7;
 }
 
 .footer-charity-no {
@@ -608,7 +608,7 @@ footer {
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 13px; }
 .footer-col ul li a, .footer-col a {
-  color: #e0f0fc;
+  color: #f2f8ff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
@@ -621,7 +621,7 @@ footer {
 .footer-col p {
   font-size: 1rem;
   line-height: 1.8;
-  color: #c0daef;
+  color: #ddeaf7;
   margin-bottom: 10px;
 }
 
@@ -633,7 +633,7 @@ footer {
   flex-wrap: wrap;
   gap: 8px;
 }
-.footer-bottom p { font-size: 0.88rem; color: #a0c4e0; line-height: 1.6; }
+.footer-bottom p { font-size: 0.88rem; color: #ccdff0; line-height: 1.6; }
 
 .ncba-badge {
   display: inline-flex;
