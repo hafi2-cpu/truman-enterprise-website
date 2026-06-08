@@ -37,8 +37,8 @@ a { color: inherit; }
 
 /* ===== NAV ===== */
 nav {
-  background: white;
-  border-bottom: 1px solid var(--border);
+  background: #1c3a5c;
+  border-bottom: 3px solid #b8852a;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -71,13 +71,13 @@ nav {
 .nav-logo-text span:first-child {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--navy);
+  color: #ffffff;
   letter-spacing: -0.3px;
 }
 .nav-logo-text span:last-child {
   font-size: 0.65rem;
   font-weight: 500;
-  color: var(--teal);
+  color: #f0c060;
   letter-spacing: 1.5px;
   text-transform: uppercase;
 }
@@ -94,14 +94,14 @@ nav {
   padding: 7px 14px;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.88);
   text-decoration: none;
   border-radius: 6px;
   transition: color 0.15s, background 0.15s;
 }
 
-.nav-links a:hover { color: var(--text); background: var(--bg-light); }
-.nav-links a.active { color: var(--teal); font-weight: 600; }
+.nav-links a:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-links a.active { color: #f0c060; font-weight: 600; }
 
 .nav-cta {
   background: var(--teal) !important;
@@ -553,9 +553,9 @@ h2.section-heading {
 
 /* ===== FOOTER ===== */
 footer {
-  background: var(--navy);
-  color: rgba(255,255,255,0.45);
-  border-top: 3px solid var(--teal);
+  background: #1c3a5c;
+  color: #d4e8f8;
+  border-top: 4px solid var(--gold, #b8852a);
 }
 
 .footer-inner {
@@ -568,81 +568,84 @@ footer {
   display: grid;
   grid-template-columns: 1.8fr 1fr 1.5fr 1fr;
   gap: 56px;
-  padding: 56px 0 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 56px 0 52px;
+  border-bottom: 2px solid rgba(255,255,255,0.12);
 }
 
 .footer-brand-name {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: white;
-  margin-bottom: 12px;
+  color: #ffffff;
+  margin-bottom: 14px;
 }
 
 .footer-brand p {
-  font-size: 0.82rem;
-  line-height: 1.85;
+  font-size: 1rem;
+  line-height: 1.9;
   margin-bottom: 20px;
-  color: rgba(255,255,255,0.38);
+  color: #c0daef;
 }
 
 .footer-charity-no {
   display: inline-block;
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 4px 10px;
+  border: 1px solid rgba(240,192,96,0.5);
+  padding: 6px 14px;
   border-radius: 4px;
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.28);
+  font-size: 0.78rem;
+  color: #f0c060;
+  font-weight: 500;
 }
 
 .footer-col h4 {
-  color: rgba(255,255,255,0.9);
-  font-size: 0.62rem;
+  color: #f0c060;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li { margin-bottom: 13px; }
 .footer-col ul li a, .footer-col a {
-  color: rgba(255,255,255,0.4);
+  color: #e0f0fc;
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 1rem;
   transition: color 0.2s;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
-.footer-col ul li a:hover, .footer-col a:hover { color: white; }
+.footer-col ul li a:hover, .footer-col a:hover { color: #f0c060; }
 
 .footer-col p {
-  font-size: 0.82rem;
+  font-size: 1rem;
   line-height: 1.8;
-  color: rgba(255,255,255,0.38);
-  margin-bottom: 8px;
+  color: #c0daef;
+  margin-bottom: 10px;
 }
 
 .footer-bottom {
-  padding: 20px 0;
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
 }
-.footer-bottom p { font-size: 0.74rem; color: rgba(255,255,255,0.22); }
+.footer-bottom p { font-size: 0.88rem; color: #a0c4e0; line-height: 1.6; }
 
 .ncba-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 6px 12px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(240,192,96,0.4);
+  padding: 7px 16px;
   border-radius: 20px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.82rem;
+  color: #f0c060;
+  font-weight: 500;
 }
 
 /* ===== RESPONSIVE ===== */

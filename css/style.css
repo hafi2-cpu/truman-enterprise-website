@@ -49,11 +49,11 @@ h4, h5, h6, label, button { font-family: 'Inter', sans-serif; }
 
 /* ===== NAVIGATION ===== */
 nav {
-  background: var(--navy);
+  background: #1c3a5c;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 3px solid var(--gold);
 }
 
 .nav-inner {
@@ -409,6 +409,27 @@ section { padding: 80px 24px; }
   text-transform: uppercase;
   color: var(--teal);
   margin-bottom: 12px;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 2px;
+  display: block;
 }
 
 .section-title {
@@ -874,11 +895,11 @@ section { padding: 80px 24px; }
 .cal-day:hover:not(.unavailable):not(.other-month) { background: var(--cream); }
 .cal-day.other-month { color: #d0d8e4; pointer-events: none; }
 .cal-day.today { font-weight: 700; border: 2px solid var(--navy); }
-.cal-day.available { background: #d1f5ee; color: #0a5e50; font-weight: 600; }
-.cal-day.available:hover { background: #b3eddf; }
-.cal-day.provisional { background: #fff3cd; color: #7c5c00; font-weight: 600; }
-.cal-day.provisional:hover { background: #ffe69c; }
-.cal-day.booked { background: #fde8e8; color: #8b1a1a; cursor: not-allowed; }
+.cal-day.available { background: none; color: var(--text); font-weight: 500; }
+.cal-day.available:hover { background: var(--cream); }
+.cal-day.provisional { background: #f97316; color: white; font-weight: 700; }
+.cal-day.provisional:hover { background: #ea6c0a; }
+.cal-day.booked { background: #dc2626; color: white; font-weight: 700; cursor: not-allowed; }
 
 .calendar-legend {
   display: flex; gap: 14px;
@@ -900,9 +921,9 @@ section { padding: 80px 24px; }
   border-radius: 3px;
 }
 
-.legend-dot.available  { background: #d1f5ee; border: 1px solid #0a5e50; }
-.legend-dot.provisional{ background: #fff3cd; border: 1px solid #7c5c00; }
-.legend-dot.booked     { background: #fde8e8; border: 1px solid #8b1a1a; }
+.legend-dot.available  { background: white; border: 1px solid #ccc; }
+.legend-dot.provisional{ background: #f97316; border: 1px solid #ea6c0a; }
+.legend-dot.booked     { background: #dc2626; border: 1px solid #b91c1c; }
 
 /* ===== BOOKING FORM ===== */
 .booking-layout {
@@ -1410,9 +1431,9 @@ section { padding: 80px 24px; }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #07131e;
-  color: rgba(255,255,255,0.5);
-  border-top: 3px solid var(--gold);
+  background: #1c3a5c;
+  color: #d4e8f8;
+  border-top: 4px solid var(--gold);
 }
 
 .footer-inner {
@@ -1426,22 +1447,23 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 36px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 40px 0;
+  border-bottom: 2px solid rgba(255,255,255,0.12);
   gap: 24px;
 }
 
 .footer-cta-strip-text h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  color: white;
-  margin-bottom: 4px;
+  font-size: 1.35rem;
+  color: #ffffff;
+  margin-bottom: 6px;
   font-weight: 600;
 }
 
 .footer-cta-strip-text p {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.95rem;
+  color: #b8d8f0;
+  line-height: 1.6;
 }
 
 /* Main grid */
@@ -1449,89 +1471,94 @@ footer {
   display: grid;
   grid-template-columns: 1.8fr 1fr 1.5fr 1fr;
   gap: 56px;
-  padding: 52px 0 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 56px 0 52px;
+  border-bottom: 2px solid rgba(255,255,255,0.12);
 }
 
 .footer-brand p {
-  font-size: 0.83rem;
-  line-height: 1.85;
+  font-size: 1rem;
+  line-height: 1.9;
   margin-bottom: 20px;
-  color: rgba(255,255,255,0.4);
+  color: #c0daef;
 }
 
 .footer-charity-no {
   display: inline-block;
-  border: 1px solid rgba(255,255,255,0.12);
-  padding: 5px 12px;
+  border: 1px solid rgba(240,192,96,0.5);
+  padding: 6px 14px;
   border-radius: 4px;
-  font-size: 0.71rem;
-  color: rgba(255,255,255,0.3);
+  font-size: 0.78rem;
+  color: #f0c060;
+  font-weight: 500;
 }
 
 .footer-col h4 {
-  color: rgba(255,255,255,0.9);
-  font-size: 0.63rem;
-  margin-bottom: 20px;
+  color: #f0c060;
+  font-size: 0.72rem;
+  margin-bottom: 22px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 
 .footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 11px; }
+.footer-col ul li { margin-bottom: 13px; }
 .footer-col ul li a {
-  color: rgba(255,255,255,0.42);
+  color: #e0f0fc;
   text-decoration: none;
-  font-size: 0.83rem;
+  font-size: 1rem;
   transition: color 0.2s;
+  line-height: 1.5;
 }
-.footer-col ul li a:hover { color: var(--gold-light); }
+.footer-col ul li a:hover { color: #f0c060; }
 
 .footer-col p {
-  font-size: 0.83rem;
-  margin-bottom: 10px;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.42);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: 1.8;
+  color: #c0daef;
 }
 
 .footer-col a {
-  color: rgba(255,255,255,0.42);
+  color: #e0f0fc;
   text-decoration: none;
-  font-size: 0.83rem;
+  font-size: 1rem;
   transition: color 0.2s;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
-.footer-col a:hover { color: var(--gold-light); }
+.footer-col a:hover { color: #f0c060; }
 
 .footer-address {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.3);
-  line-height: 1.8;
-  margin-top: 4px;
+  font-size: 1rem;
+  color: #c0daef;
+  line-height: 2;
+  margin-top: 6px;
 }
 
 /* Bottom bar */
 .footer-bottom {
-  padding: 22px 0;
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
+  border-top: none;
 }
 
-.footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+.footer-bottom p { font-size: 0.88rem; color: #a0c4e0; line-height: 1.6; }
 
 .ncba-badge {
   display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 6px 14px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(240,192,96,0.4);
+  padding: 7px 16px;
   border-radius: 5px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  font-size: 0.82rem;
+  color: #f0c060;
+  font-weight: 500;
 }
 
 /* ===== SIDE PANEL ===== */
