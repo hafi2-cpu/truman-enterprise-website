@@ -35,8 +35,8 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
   background: var(--off-white);
-  line-height: 1.8;
-  font-size: 17px;
+  line-height: 1.82;
+  font-size: 19px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -63,7 +63,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  height: 86px;
+  height: 100px;
 }
 
 .nav-logo {
@@ -74,7 +74,7 @@ nav {
   flex-shrink: 0;
 }
 
-.nav-logo-icon { width: 58px; height: 58px; flex-shrink: 0; }
+.nav-logo-icon { width: 74px; height: 74px; flex-shrink: 0; }
 
 .nav-logo-text span:first-child {
   display: block;

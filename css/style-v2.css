@@ -27,8 +27,8 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
   background: var(--bg);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 19px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,7 +48,7 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
-  height: 82px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +61,7 @@ nav {
   text-decoration: none;
 }
 
-.nav-logo-icon { width: 56px; height: 56px; }
+.nav-logo-icon { width: 72px; height: 72px; }
 
 .nav-logo-text {
   display: flex;
