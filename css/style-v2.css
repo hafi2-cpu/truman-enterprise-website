@@ -27,8 +27,8 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
   background: var(--bg);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,7 +48,7 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
-  height: 68px;
+  height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +61,7 @@ nav {
   text-decoration: none;
 }
 
-.nav-logo-icon { width: 38px; height: 38px; }
+.nav-logo-icon { width: 56px; height: 56px; }
 
 .nav-logo-text {
   display: flex;
@@ -69,13 +69,13 @@ nav {
   line-height: 1.2;
 }
 .nav-logo-text span:first-child {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.3px;
 }
 .nav-logo-text span:last-child {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: #f0c060;
   letter-spacing: 1.5px;
@@ -137,15 +137,45 @@ nav {
   background: var(--navy);
 }
 
-.hero-img {
+.hero-slide {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.45;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out, transform 8s ease-out;
+  transform: scale(1.04);
+  will-change: opacity, transform;
 }
+.hero-slide.active { opacity: 1; transform: scale(1); }
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(8,22,38,0.70) 0%, rgba(8,22,38,0.45) 55%, rgba(8,22,38,0.30) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+}
+.hero-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none; cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.hero-dot.active { background: white; width: 26px; border-radius: 4px; }
 
 .hero-inner {
   position: relative;

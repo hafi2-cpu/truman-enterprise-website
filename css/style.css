@@ -35,8 +35,8 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
   background: var(--off-white);
-  line-height: 1.75;
-  font-size: 16px;
+  line-height: 1.8;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -63,7 +63,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  height: 72px;
+  height: 86px;
 }
 
 .nav-logo {
@@ -74,12 +74,12 @@ nav {
   flex-shrink: 0;
 }
 
-.nav-logo-icon { width: 44px; height: 44px; flex-shrink: 0; }
+.nav-logo-icon { width: 58px; height: 58px; flex-shrink: 0; }
 
 .nav-logo-text span:first-child {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: white;
   letter-spacing: 0.2px;
   line-height: 1.2;
@@ -88,7 +88,7 @@ nav {
 .nav-logo-text span:last-child {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   color: var(--gold-light);
   letter-spacing: 2px;
   text-transform: uppercase;
