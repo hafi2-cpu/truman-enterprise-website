@@ -43,20 +43,19 @@
   <div class="section-inner">
     <div class="booking-layout">
 
-      <!-- Booking Form -->
-      <div class="form-card">
-        <h2>Trip Booking Request</h2>
-        <p class="form-subtitle">You can book up to 4 trips on this form. We'll confirm your booking by email and send an invoice.</p>
-        <p class="required-note"><span>*</span> Required fields</p>
-
-        <form id="booking-form" novalidate>
-
-          <!-- Web3Forms config — replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com -->
-          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-          <input type="hidden" name="subject" value="New Boat Trip Booking Request — TENT">
-          <input type="hidden" name="from_name" value="TENT Website Booking Form">
-          <input type="hidden" name="redirect" value="false">
-          <input type="checkbox" name="botcheck" style="display:none;">
+      <!-- Booking Widget -->
+      <div class="form-card" style="padding:0; overflow:hidden;">
+        <div style="padding:28px 28px 0;">
+          <h2>Book a Trip</h2>
+          <p class="form-subtitle">Select your preferred date and trip below. You'll receive a confirmation email once your booking is complete.</p>
+        </div>
+        <iframe
+          src="https://bookwhen.com/trumanenterprise"
+          style="width:100%; min-height:750px; border:0; display:block; margin-top:16px;"
+          loading="lazy"
+          title="TENT Trip Booking">
+        </iframe>
+        <div style="display:none;"><form id="booking-form">
 
 
           <div class="form-section-title">Your Details</div>
@@ -193,6 +192,7 @@
 
         </form>
       </div>
+      </div><!-- end form-card -->
 
       <!-- Side Info Panel -->
       <div>

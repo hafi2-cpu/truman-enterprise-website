@@ -256,62 +256,28 @@
         </div>
       </div>
 
-      <!-- Right: Calendar + How to Book -->
+      <!-- Right: Live Booking -->
       <div class="booking-side-panel">
-        <div class="section-label">Availability</div>
-        <h3 style="color:var(--navy); font-size:1.2rem; margin-bottom:16px;">Trip Diary</h3>
-        <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); margin-bottom:20px;">Check dates below, then complete the booking form. Green dates are available — click to start your booking.</p>
+        <div class="section-label">Availability &amp; Booking</div>
+        <h3 style="color:var(--navy); font-size:1.2rem; margin-bottom:8px;">Book a Trip</h3>
+        <p style="font-family:sans-serif; font-size:0.85rem; color:var(--text-light); margin-bottom:16px;">Select a date below to check availability and make your booking.</p>
 
-        <div class="calendar-wrapper" id="booking-calendar">
-          <div class="calendar-header">
-            <button class="cal-nav-btn cal-prev">&#8249;</button>
-            <h3 class="cal-month-label">Loading...</h3>
-            <button class="cal-nav-btn cal-next">&#8250;</button>
-          </div>
-          <div class="calendar-grid">
-            <div class="calendar-weekdays">
-              <div>Mo</div><div>Tu</div><div>We</div>
-              <div>Th</div><div>Fr</div><div>Sa</div><div>Su</div>
-            </div>
-            <div class="calendar-days"></div>
-          </div>
-          <div class="calendar-legend">
-            <div class="legend-item"><div class="legend-dot available"></div> Available</div>
-            <div class="legend-item"><div class="legend-dot provisional"></div> Provisional</div>
-            <div class="legend-item"><div class="legend-dot booked"></div> Booked</div>
-          </div>
+        <div style="border-radius:12px; overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--border);">
+          <iframe
+            src="https://bookwhen.com/trumanenterprise"
+            style="width:100%; min-height:600px; border:0; display:block;"
+            loading="lazy"
+            title="TENT Trip Booking Calendar">
+          </iframe>
         </div>
 
-        <div id="booking-section" style="margin-top:28px;">
-          <div style="background:white; border-radius:10px; padding:24px; box-shadow:var(--shadow);">
-            <h4 style="color:var(--navy); margin-bottom:16px; font-size:1rem;">How to Book</h4>
-            <div class="how-to-book-steps">
-              <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-text">Check the <strong>calendar</strong> above for your preferred date</div>
-              </div>
-              <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-text">Complete the <strong><a href="booking-form.html" style="color:var(--teal);">online booking form</a></strong></div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-text">Read and agree to the <strong>Terms &amp; Conditions</strong></div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-text">Your trip will be <strong>confirmed by e-mail</strong> with an invoice</div>
-              </div>
-            </div>
-            <hr class="divider" style="margin:16px 0;">
-            <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-light); margin-bottom:8px;"><strong style="color:var(--navy);">Phone:</strong></p>
-            <p style="font-family:sans-serif; font-size:1rem; color:var(--navy); font-weight:bold; margin-bottom:8px;"><a href="tel:07895053090" style="color:var(--navy); text-decoration:none;">07895 053090</a></p>
-            <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-light); margin-bottom:4px;"><strong style="color:var(--navy);">Email:</strong></p>
-            <p style="font-family:sans-serif; font-size:0.8rem;"><a href="mailto:enterprise@truman-enterprise.org.uk" style="color:var(--teal);">enterprise@truman-enterprise.org.uk</a></p>
-            <div style="margin-top:16px;">
-              <a href="booking-form.html" class="btn btn-primary" style="width:100%; text-align:center; display:block; padding:12px;">Book Online</a>
-            </div>
-          </div>
+        <div style="background:white; border-radius:10px; padding:20px; box-shadow:var(--shadow); margin-top:20px;">
+          <p style="font-family:sans-serif; font-size:0.82rem; color:var(--text-light); margin-bottom:8px;"><strong style="color:var(--navy);">Prefer to book by phone?</strong></p>
+          <p style="font-family:sans-serif; font-size:1rem; color:var(--navy); font-weight:bold; margin-bottom:8px;"><a href="tel:07895053090" style="color:var(--navy); text-decoration:none;">07895 053090</a></p>
+          <p style="font-family:sans-serif; font-size:0.8rem;"><a href="mailto:enterprise@truman-enterprise.org.uk" style="color:var(--teal);">enterprise@truman-enterprise.org.uk</a></p>
+        </div>
+
+        <div id="booking-section">
 
           <!-- Location -->
           <div style="background:white; border-radius:10px; padding:24px; box-shadow:var(--shadow); margin-top:20px;">
