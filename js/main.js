@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initHeroSlider();
   initAccordions();
   initCalendar();
+  initAvailabilityCalendar();
   initBookingForm();
   animateStats();
 });
@@ -242,6 +243,102 @@ function initBookingForm() {
       if (errorMsg) errorMsg.style.display = 'block';
     }
   });
+}
+
+// ---- Availability Calendar (reads live Bookwhen iCal feed) ----
+function initAvailabilityCalendar() {
+  const wrapper = document.getElementById('avail-calendar');
+  if (!wrapper) return;
+
+  const ICAL_URL = 'https://feeds.bookwhen.com/ical/mp64ssvjhfj8/mm21hu/public.ics';
+  const PROXY    = 'https://api.allorigins.win/get?url=' + encodeURIComponent(ICAL_URL);
+  const BOOK_URL = 'https://bookwhen.com/trumanenterprise';
+  const MONTHS   = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  const today = new Date();
+  let viewYear  = today.getFullYear();
+  let viewMonth = today.getMonth();
+  if (viewMonth < 3)  { viewMonth = 3; }   // start at April
+  if (viewMonth > 9)  { viewMonth = 3; viewYear++; } // after Oct → next April
+
+  const bookedDates = new Set();
+
+  fetch(PROXY)
+    .then(r => r.json())
+    .then(data => {
+      const text = data.contents || '';
+      // Match DTSTART with timezone: DTSTART;TZID=...:20260928T100000
+      [...text.matchAll(/DTSTART[^:]*:(\d{8})T/g)].forEach(m => {
+        const s = m[1];
+        bookedDates.add(`${s.slice(0,4)}-${s.slice(4,6)}-${s.slice(6,8)}`);
+      });
+      render();
+    })
+    .catch(() => render()); // render without booked data on error
+
+  render(); // immediate render while fetch is in flight
+
+  wrapper.querySelector('#avail-prev').addEventListener('click', () => {
+    viewMonth--;
+    if (viewMonth < 3) { viewMonth = 9; viewYear--; }
+    render();
+  });
+  wrapper.querySelector('#avail-next').addEventListener('click', () => {
+    viewMonth++;
+    if (viewMonth > 9) { viewMonth = 3; viewYear++; }
+    render();
+  });
+
+  function render() {
+    wrapper.querySelector('#avail-month-label').textContent = `${MONTHS[viewMonth]} ${viewYear}`;
+
+    const cells = wrapper.querySelector('#avail-days');
+    cells.innerHTML = '';
+
+    const firstDay    = new Date(viewYear, viewMonth, 1).getDay();
+    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+    const prevDays    = new Date(viewYear, viewMonth, 0).getDate();
+    const offset      = (firstDay + 6) % 7;
+    const todayMid    = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+    for (let i = offset - 1; i >= 0; i--) {
+      const el = document.createElement('div');
+      el.className = 'avail-day other';
+      el.textContent = prevDays - i;
+      cells.appendChild(el);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dateKey  = `${viewYear}-${String(viewMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+      const dayDate  = new Date(viewYear, viewMonth, d);
+      const isPast   = dayDate < todayMid;
+      const isBooked = bookedDates.has(dateKey);
+
+      const el = document.createElement('div');
+      el.textContent = d;
+
+      if (isPast) {
+        el.className = 'avail-day past';
+      } else if (isBooked) {
+        el.className = 'avail-day booked';
+        el.title = 'Already booked';
+      } else {
+        el.className = 'avail-day available';
+        el.title = 'Available — click to book';
+        el.addEventListener('click', () => window.open(BOOK_URL, '_blank'));
+      }
+      cells.appendChild(el);
+    }
+
+    const total = offset + daysInMonth;
+    const tail  = total % 7 === 0 ? 0 : 7 - (total % 7);
+    for (let d = 1; d <= tail; d++) {
+      const el = document.createElement('div');
+      el.className = 'avail-day other';
+      el.textContent = d;
+      cells.appendChild(el);
+    }
+  }
 }
 
 // ---- Stats counter animation ----
