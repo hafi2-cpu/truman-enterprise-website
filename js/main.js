@@ -205,7 +205,7 @@ function initBookingForm() {
   const form = document.getElementById('booking-form');
   if (!form) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const terms = form.querySelector('input[name="terms"]');
@@ -214,41 +214,34 @@ function initBookingForm() {
       return;
     }
 
-    // Collect form data
-    const data = new FormData(form);
-    const subject = `Boat Trip Booking - ${data.get('group_name') || 'New Booking'}`;
-    const body = buildEmailBody(data);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successMsg = form.querySelector('.success-message');
+    const errorMsg = form.querySelector('.error-message');
 
-    // Open mailto link
-    const mailto = `mailto:enterprise@truman-enterprise.org.uk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
 
-    const success = form.querySelector('.success-message');
-    if (success) success.style.display = 'block';
-  });
-}
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
 
-function buildEmailBody(data) {
-  let body = 'TRIP BOOKING REQUEST\n';
-  body += '====================\n\n';
-  body += `Group Name: ${data.get('group_name') || ''}\n`;
-  body += `Contact Name: ${data.get('contact_name') || ''}\n`;
-  body += `Address: ${data.get('address') || ''}\n`;
-  body += `Phone: ${data.get('phone') || ''}\n`;
-  body += `Email: ${data.get('email') || ''}\n`;
-  body += `Day-of Contact: ${data.get('day_contact') || ''}\n`;
-  body += `Day-of Mobile: ${data.get('day_mobile') || ''}\n\n`;
-  body += 'TRIPS REQUESTED:\n';
-  for (let i = 1; i <= 4; i++) {
-    const date = data.get(`trip${i}_date`);
-    const dest = data.get(`trip${i}_dest`);
-    const lunch = data.get(`trip${i}_lunch`);
-    if (date || dest) {
-      body += `  Trip ${i}: Date: ${date || '—'} | Destination: ${dest || '—'} | Lunch: ${lunch || '—'}\n`;
+      if (result.success) {
+        submitBtn.style.display = 'none';
+        if (successMsg) successMsg.style.display = 'block';
+        if (errorMsg) errorMsg.style.display = 'none';
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Booking Request';
+      if (errorMsg) errorMsg.style.display = 'block';
     }
-  }
-  body += `\nPhotos consent: ${data.get('photos') ? 'Yes' : 'No'}\n`;
-  return body;
+  });
 }
 
 // ---- Stats counter animation ----

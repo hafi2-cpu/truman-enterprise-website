@@ -51,6 +51,14 @@
 
         <form id="booking-form" novalidate>
 
+          <!-- Web3Forms config — replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com -->
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+          <input type="hidden" name="subject" value="New Boat Trip Booking Request — TENT">
+          <input type="hidden" name="from_name" value="TENT Website Booking Form">
+          <input type="hidden" name="redirect" value="false">
+          <input type="checkbox" name="botcheck" style="display:none;">
+
+
           <div class="form-section-title">Your Details</div>
 
           <div class="form-group">
@@ -173,8 +181,14 @@
             Submit Booking Request
           </button>
 
-          <div class="success-message" style="display:none;">
-            ✅ Thank you! Your booking request has been prepared. Please send the email that has opened in your mail app, or contact us directly at <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:var(--teal);">enterprise@truman-enterprise.org.uk</a> or <a href="tel:07895053090" style="color:var(--teal);">07895 053090</a>.
+          <div class="success-message" style="display:none; background:#e8f5f3; border:1px solid #1a6e62; border-radius:10px; padding:24px; margin-top:16px;">
+            <strong style="color:#1a6e62; font-size:1.1rem;">✅ Booking request sent!</strong>
+            <p style="margin-top:8px; font-family:sans-serif; font-size:0.92rem; color:#2d4a3e; line-height:1.7;">Thank you — your request has been sent directly to our team. We'll be in touch by email to confirm your booking and send an invoice. If you don't hear back within 2 working days, please call us on <strong>07895 053090</strong>.</p>
+          </div>
+
+          <div class="error-message" style="display:none; background:#fef2f2; border:1px solid #c0392b; border-radius:10px; padding:24px; margin-top:16px;">
+            <strong style="color:#c0392b;">⚠️ Something went wrong</strong>
+            <p style="margin-top:8px; font-family:sans-serif; font-size:0.92rem; color:#7b2d2d; line-height:1.7;">We couldn't send your request. Please email us directly at <a href="mailto:enterprise@truman-enterprise.org.uk" style="color:#1a6e62;">enterprise@truman-enterprise.org.uk</a> or call <strong>07895 053090</strong>.</p>
           </div>
 
         </form>
@@ -187,21 +201,21 @@
           <div style="display:flex; flex-direction:column; gap:12px;">
             <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1);">
               <div>
-                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🍺 Coven</div>
+                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🍽️ Coven</div>
                 <div style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.6);">5–5½ hours</div>
               </div>
               <div style="color:var(--gold); font-size:1.3rem; font-weight:bold;">£110</div>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1);">
               <div>
-                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">⚓ Autherley</div>
+                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🧭 Autherley</div>
                 <div style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.6);">6 hours</div>
               </div>
               <div style="color:var(--gold); font-size:1.3rem; font-weight:bold;">£140</div>
             </div>
             <div style="display:flex; justify-content:space-between; align-items:center;">
               <div>
-                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🔒 Penkridge</div>
+                <div style="font-family:sans-serif; font-weight:600; font-size:0.9rem;">🗝️ Penkridge</div>
                 <div style="font-family:sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.6);">8 hours · 12 locks</div>
               </div>
               <div style="color:var(--gold); font-size:1.3rem; font-weight:bold;">£170</div>
