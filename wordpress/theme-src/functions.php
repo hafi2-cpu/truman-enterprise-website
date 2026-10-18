@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TRUMAN_VERSION', '1.0.0' );
+define( 'TRUMAN_VERSION', '1.0.1' );
 
 require_once get_template_directory() . '/inc/setup.php';
 
@@ -31,8 +31,10 @@ add_action( 'after_setup_theme', 'truman_theme_setup' );
  * Styles and scripts.
  */
 function truman_assets() {
-	wp_enqueue_style( 'truman', get_stylesheet_uri(), array(), TRUMAN_VERSION );
-	wp_enqueue_script( 'truman', get_template_directory_uri() . '/assets/js/main.js', array(), TRUMAN_VERSION, true );
+	// Version by file time so browsers and server caches pick up every change.
+	$dir = get_template_directory();
+	wp_enqueue_style( 'truman', get_stylesheet_uri(), array(), (string) filemtime( $dir . '/style.css' ) );
+	wp_enqueue_script( 'truman', get_template_directory_uri() . '/assets/js/main.js', array(), (string) filemtime( $dir . '/assets/js/main.js' ), true );
 }
 add_action( 'wp_enqueue_scripts', 'truman_assets' );
 
