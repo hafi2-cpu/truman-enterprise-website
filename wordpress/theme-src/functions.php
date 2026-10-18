@@ -37,6 +37,20 @@ function truman_assets() {
 add_action( 'wp_enqueue_scripts', 'truman_assets' );
 
 /**
+ * Show emoji icons (🍺 ⚓ 🌿 …) as normal text, like the original site,
+ * instead of WordPress swapping them for images that ignore the design's sizing.
+ */
+function truman_disable_emoji_images() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+}
+add_action( 'init', 'truman_disable_emoji_images' );
+
+/**
  * Every page gets the "te-site" class; all site styles are scoped to it.
  */
 function truman_body_class( $classes ) {

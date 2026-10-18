@@ -179,6 +179,7 @@ DEFAULTS = """
 .te-site a { color:var(--teal); }
 .te-site button { font-family:inherit; }
 .te-site img { height:auto; max-width:100%; }
+.te-site img.emoji, .te-site img.wp-smiley { display:inline !important; width:1em !important; height:1em !important; max-width:none !important; margin:0 .07em !important; vertical-align:-0.1em !important; border:none !important; box-shadow:none !important; background:none !important; padding:0 !important; }
 .te-site .page-hero img, .te-site .img-frame img { max-width:none; }
 
 /* ===== Elementor ===== */
