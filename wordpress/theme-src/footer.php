@@ -5,22 +5,22 @@
  * @package Truman_Enterprise
  */
 ?>
-<footer>
+<footer class="site-footer">
 	<div class="footer-inner">
-		<div class="footer-cta-strip">
-			<div class="footer-cta-strip-text">
-				<h3>Truman Enterprise Narrowboat Trust</h3>
-				<p>Making waterways accessible to everyone since 1968 — Registered Charity No. 1037914</p>
-			</div>
-		</div>
 		<div class="footer-grid">
 			<div class="footer-brand">
-				<img class="footer-logo" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/truman-logo-large.png' ); ?>" width="216" height="100" alt="<?php esc_attr_e( 'Truman Enterprise Narrowboat Trust', 'truman' ); ?>" loading="lazy">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo-link">
+					<img class="footer-logo" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/truman-logo-large.png' ); ?>" width="216" height="100" alt="<?php esc_attr_e( 'Truman Enterprise Narrowboat Trust', 'truman' ); ?>" loading="lazy">
+				</a>
 				<p>A volunteer-run charity providing accessible canal boat day trips for elderly, disabled and community groups across the West Midlands since 1968.</p>
-				<span class="footer-charity-no">Registered Charity No. 1037914</span>
+				<div class="footer-badges">
+					<span class="footer-badge">Registered Charity No. 1037914</span>
+					<span class="footer-badge">🚢 NCBA Member</span>
+				</div>
 			</div>
+
 			<div class="footer-col">
-				<h4>Navigate</h4>
+				<h4>Explore</h4>
 				<?php
 				wp_nav_menu(
 					array(
@@ -33,20 +33,27 @@
 				);
 				?>
 			</div>
+
 			<div class="footer-col">
 				<h4>Contact Us</h4>
-				<a href="tel:07895053090">07895 053090</a>
-				<a href="mailto:enterprise@truman-enterprise.org.uk">enterprise@truman-enterprise.org.uk</a>
-				<p class="footer-address" style="margin-top:14px;">Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton WV10 7DT</p>
+				<ul class="footer-contact">
+					<li><span class="footer-icon" aria-hidden="true">📞</span><a href="tel:07895053090">07895 053090</a></li>
+					<li><span class="footer-icon" aria-hidden="true">✉️</span><a href="mailto:enterprise@truman-enterprise.org.uk">enterprise@truman-enterprise.org.uk</a></li>
+					<li><span class="footer-icon" aria-hidden="true">📍</span><span>Hatherton Marina<br>Queens Road, Calf Heath<br>Wolverhampton WV10 7DT</span></li>
+				</ul>
 			</div>
+
 			<div class="footer-col">
-				<h4>Season</h4>
-				<p>Trips run <strong style="color:rgba(255,255,255,0.7);">April to October</strong>, 7 days a week, from Hatherton Marina.</p>
-				<p style="margin-top:16px;"><span class="ncba-badge">🚢 NCBA Member</span></p>
+				<h4>Trip Season</h4>
+				<p>Trips run <strong>April to October</strong>, 7 days a week, from Hatherton Marina.</p>
+				<a class="btn btn-primary btn-sm footer-book" href="<?php echo esc_url( truman_page_url( 'book-a-trip' ) ); ?>"><?php esc_html_e( 'Book a Trip', 'truman' ); ?></a>
 			</div>
 		</div>
-		<div class="footer-bottom">
-			<p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> Truman Enterprise Narrowboat Trust. Registered Charity No. 1037914.</p>
+	</div>
+
+	<div class="footer-bottom-bar">
+		<div class="footer-inner footer-bottom">
+			<p>© <?php echo esc_html( gmdate( 'Y' ) ); ?> Truman Enterprise Narrowboat Trust · Registered Charity No. 1037914</p>
 			<p>Member of the National Community Boats Association</p>
 		</div>
 	</div>

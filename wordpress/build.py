@@ -185,8 +185,42 @@ DEFAULTS = """
 /* ===== logo ===== */
 .te-site .nav-inner { height:84px; }
 .te-site .nav-logo-img { display:block; height:64px; width:auto; max-width:none; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25)); }
-.te-site .footer-logo { display:block; height:96px; width:auto; margin-bottom:20px; }
 @media (max-width: 900px) { .te-site .nav-inner { height:auto; } .te-site .nav-logo-img { height:52px; } }
+
+/* ===== footer (light) ===== */
+.te-site footer.site-footer { background:#f7f2e6; color:#2c3a4d; border-top:4px solid var(--gold); }
+.te-site .site-footer .footer-inner { max-width:1200px; margin:0 auto; padding:0 40px; }
+.te-site .site-footer .footer-grid { display:grid; grid-template-columns:1.4fr 0.8fr 1.7fr 1.1fr; gap:44px; padding:64px 0 56px; border-bottom:0; }
+.te-site .site-footer .footer-logo { display:block; height:100px; width:auto; margin-bottom:22px; filter:drop-shadow(0 4px 10px rgba(13,33,55,0.15)); }
+.te-site .site-footer .footer-brand p { font-size:0.95rem; line-height:1.75; color:#2c3a4d; margin-bottom:20px; max-width:360px; }
+.te-site .site-footer .footer-badges { display:flex; flex-wrap:wrap; gap:8px; }
+.te-site .site-footer .footer-badge { display:inline-flex; align-items:center; gap:6px; background:white; border:1px solid #e3dccb; color:var(--navy); font-size:0.78rem; font-weight:600; padding:6px 12px; border-radius:50px; }
+.te-site .site-footer .footer-col h4 { color:var(--navy); font-size:0.78rem; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:22px; padding-bottom:10px; position:relative; }
+.te-site .site-footer .footer-col h4::after { content:''; position:absolute; left:0; bottom:0; width:32px; height:3px; border-radius:2px; background:var(--teal); }
+.te-site .site-footer .footer-col ul { list-style:none; }
+.te-site .site-footer .footer-menu li { margin-bottom:12px; }
+.te-site .site-footer .footer-col a, .te-site .site-footer .footer-col ul li a { display:inline; margin:0; color:#2c3a4d; font-size:0.95rem; font-weight:500; text-decoration:none; transition:color .2s; }
+.te-site .site-footer .footer-col a:hover, .te-site .site-footer .footer-col ul li a:hover { color:var(--teal); text-decoration:underline; text-underline-offset:3px; }
+.te-site .site-footer .footer-contact li { display:flex; gap:12px; align-items:flex-start; margin-bottom:16px; font-size:0.95rem; line-height:1.6; color:#2c3a4d; }
+.te-site .site-footer .footer-contact a { overflow-wrap:break-word; }
+.te-site .site-footer .footer-icon { flex-shrink:0; width:32px; height:32px; border-radius:8px; background:white; border:1px solid #e3dccb; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; margin-top:-3px; }
+.te-site .site-footer .footer-col p { font-size:0.95rem; line-height:1.7; color:#2c3a4d; margin-bottom:20px; }
+.te-site .site-footer .footer-col p strong { color:var(--navy); }
+.te-site .site-footer .footer-col a.footer-book { display:inline-flex; color:white; font-size:0.78rem; font-weight:600; text-decoration:none; }
+.te-site .site-footer .footer-col a.footer-book:hover { color:white; text-decoration:none; }
+.te-site .site-footer .footer-bottom-bar { background:var(--navy); }
+.te-site .site-footer .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; padding:18px 40px; }
+.te-site .site-footer .footer-bottom p { font-size:0.82rem; color:rgba(255,255,255,0.82); margin:0; }
+@media (max-width: 1024px) {
+  .te-site .site-footer .footer-grid { grid-template-columns:1fr 1fr; gap:40px; padding:48px 0 40px; }
+}
+@media (max-width: 640px) {
+  .te-site .site-footer .footer-inner { padding:0 20px; }
+  .te-site .site-footer .footer-grid { grid-template-columns:1fr; gap:32px; padding:40px 0 32px; }
+  .te-site .site-footer .footer-logo { height:84px; }
+  .te-site .site-footer .footer-menu { display:grid; grid-template-columns:1fr 1fr; column-gap:16px; }
+  .te-site .site-footer .footer-bottom { flex-direction:column; text-align:center; padding:16px 20px; }
+}
 
 /* ===== keep content inside its boxes on small screens ===== */
 .te-site .booking-layout > *, .te-site .contact-grid > *, .te-site .trips-page-layout > *, .te-site .two-col > *, .te-site .form-row > * { min-width:0; }
@@ -216,7 +250,7 @@ Theme Name: Truman Enterprise
 Theme URI: https://truman-enterprise.org.uk
 Author: Truman Enterprise Narrowboat Trust
 Description: Website theme for the Truman Enterprise Narrowboat Trust — accessible canal boat trips in the West Midlands since 1968. After activating, go to Appearance → Truman Setup and press "Set up the site" to install Elementor and create the pages, menus and photos.
-Version: 1.2.1
+Version: 1.3.0
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
