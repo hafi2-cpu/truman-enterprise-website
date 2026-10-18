@@ -1276,6 +1276,135 @@ section { padding: 80px 24px; }
 .bank-row span:first-child { color: var(--text-light); }
 .bank-row span:last-child  { font-weight: 600; color: var(--navy); font-family: 'Inter', monospace; }
 
+/* ===== FUNDRAISING APPEAL ===== */
+.appeal {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--navy);
+  background-size: cover;
+  background-position: center 60%;
+  color: white;
+  isolation: isolate;
+  box-shadow: var(--shadow-lg);
+}
+.appeal::before {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(100deg, rgba(8,22,38,0.96) 0%, rgba(8,22,38,0.88) 48%, rgba(8,22,38,0.55) 100%);
+}
+.appeal-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  padding: 64px 56px;
+}
+.appeal-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-light);
+  padding: 5px 12px;
+  border: 1px solid rgba(240,192,96,0.35);
+  border-radius: 50px;
+  background: rgba(184,133,42,0.12);
+}
+.appeal h2 {
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  color: white;
+  line-height: 1.15;
+  margin: 18px 0 20px;
+}
+.appeal h2 em { font-style: italic; color: var(--gold-light); }
+.appeal-copy p {
+  color: rgba(255,255,255,0.82);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 14px;
+  max-width: 580px;
+}
+.appeal-points { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.appeal-points li {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+}
+.appeal-card {
+  position: relative;
+  background: white;
+  color: var(--text);
+  border-radius: 18px;
+  padding: 40px 34px 30px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+.appeal-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+}
+.appeal-card-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--teal);
+}
+.appeal-raised {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4rem; font-weight: 700;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-top: 8px;
+}
+.appeal-target { color: var(--text-light); font-size: 0.92rem; margin: 4px 0 22px; }
+.appeal-bar {
+  height: 14px;
+  background: #edf0f4;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.appeal-bar span {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 50px;
+  transition: width 1.6s cubic-bezier(.2,.8,.2,1);
+}
+.appeal-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  margin: 22px 0 26px;
+}
+.appeal-stats > div { padding: 4px 8px; }
+.appeal-stats > div + div { border-left: 1px solid var(--border); }
+.appeal-stats strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; color: var(--navy); line-height: 1.2;
+}
+.appeal-stats span {
+  font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-light); font-weight: 600;
+}
+.appeal-btn { width: 100%; justify-content: center; padding: 16px 24px; font-size: 0.9rem; }
+.appeal-alt {
+  display: inline-block; margin-top: 16px;
+  font-size: 0.85rem; font-weight: 600; color: var(--teal); text-decoration: none;
+}
+.appeal-alt:hover { color: var(--teal-light); text-decoration: underline; }
+.appeal-note { font-size: 0.72rem; color: var(--text-light); margin-top: 10px; }
+
+@media (max-width: 960px) {
+  .appeal-inner { grid-template-columns: 1fr; gap: 36px; padding: 48px 32px; }
+  .appeal-copy p { max-width: none; }
+  .appeal::before { background: linear-gradient(180deg, rgba(8,22,38,0.94) 0%, rgba(8,22,38,0.82) 100%); }
+}
+@media (max-width: 640px) {
+  .appeal { border-radius: 14px; }
+  .appeal-inner { padding: 36px 20px 24px; }
+  .appeal-card { padding: 32px 22px 24px; }
+  .appeal-raised { font-size: 2.8rem; }
+}
+
 /* ===== CONTACT ===== */
 .contact-grid {
   display: grid;

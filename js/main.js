@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initCalendar();
   initBookingForm();
   animateStats();
+  animateAppealBar();
 });
 
 // ---- Hero Slider ----
@@ -275,4 +276,21 @@ function animateStats() {
   }, { threshold: 0.5 });
 
   stats.forEach(stat => observer.observe(stat));
+}
+
+// ---- Fundraising bar: fill from zero when it scrolls into view ----
+function animateAppealBar() {
+  const bars = document.querySelectorAll('.appeal-bar span');
+  if (!bars.length || !('IntersectionObserver' in window)) return;
+  bars.forEach(bar => {
+    const target = bar.style.width;
+    bar.style.width = '0';
+    const obs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        requestAnimationFrame(() => { bar.style.width = target; });
+        obs.disconnect();
+      }
+    }, { threshold: 0.1 });
+    obs.observe(bar);
+  });
 }
