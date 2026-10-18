@@ -182,6 +182,15 @@ DEFAULTS = """
 .te-site img.emoji, .te-site img.wp-smiley { display:inline !important; width:1em !important; height:1em !important; max-width:none !important; margin:0 .07em !important; vertical-align:-0.1em !important; border:none !important; box-shadow:none !important; background:none !important; padding:0 !important; }
 .te-site .page-hero img, .te-site .img-frame img { max-width:none; }
 
+/* ===== keep content inside its boxes on small screens ===== */
+.te-site .booking-layout > *, .te-site .contact-grid > *, .te-site .trips-page-layout > *, .te-site .two-col > *, .te-site .form-row > * { min-width:0; }
+.te-site .form-group input, .te-site .form-group select, .te-site .form-group textarea { min-width:0; max-width:100%; }
+@media (max-width: 640px) {
+  .te-site .btn { white-space:normal; text-align:center; justify-content:center; overflow-wrap:anywhere; max-width:100%; }
+  .te-site .booking-layout .form-card { padding:24px 18px; }
+  .te-site .trip-row .form-row { grid-template-columns:1fr !important; gap:12px; }
+}
+
 /* ===== Elementor ===== */
 .e-con.te-block { --padding-top:0px; --padding-right:0px; --padding-bottom:0px; --padding-left:0px; --gap:0px 0px; --row-gap:0px; --column-gap:0px; padding:0; gap:0; }
 body.te-site .elementor-widget-text-editor, body.te-site .elementor-widget-html { color:inherit; font-family:inherit; font-size:inherit; font-weight:inherit; line-height:inherit; }
