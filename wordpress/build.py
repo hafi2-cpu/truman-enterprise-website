@@ -104,8 +104,22 @@ def widget(kind, title, html):
     return {'id': eid(), 'elType': 'widget', 'widgetType': kind, 'isInner': False,
             'settings': {'_title': title, key: html}, 'elements': []}
 
+def wordpress_only(soup, fname):
+    """Swap the static site's demo calendar/form for the live booking plugin."""
+    if fname == 'booking-form.html':
+        card = soup.find('div', class_='form-card')
+        card.clear()
+        card.append('[truman_booking]')
+    if fname == 'our-trips.html':
+        cal = soup.find(id='booking-calendar')
+        new = soup.new_tag('div', attrs={'class': 'tb-availability-wrap'})
+        new.append('[truman_availability]')
+        cal.replace_with(new)
+
+
 def build_page(fname):
     soup = BeautifulSoup(open(os.path.join(ROOT, fname)).read(), 'html.parser')
+    wordpress_only(soup, fname)
     blocks, html_parts = [], []
     for el in soup.body.find_all(recursive=False):
         if el.name in ('nav', 'footer', 'script'):
@@ -260,7 +274,7 @@ Theme Name: Truman Enterprise
 Theme URI: https://truman-enterprise.org.uk
 Author: Truman Enterprise Narrowboat Trust
 Description: Website theme for the Truman Enterprise Narrowboat Trust — accessible canal boat trips in the West Midlands since 1968. After activating, go to Appearance → Truman Setup and press "Set up the site" to install Elementor and create the pages, menus and photos.
-Version: 1.4.0
+Version: 1.5.0
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -308,6 +322,16 @@ def main():
     shot = os.path.join(HERE, 'screenshot.png')
     if os.path.exists(shot):
         shutil.copy(shot, os.path.join(THEME, 'screenshot.png'))
+
+    # Booking plugin: its own zip, plus a copy inside the theme for one-click setup.
+    plugin_src = os.path.join(HERE, 'plugin-src')
+    pzip = os.path.join(DIST, 'truman-bookings.zip')
+    with zipfile.ZipFile(pzip, 'w', zipfile.ZIP_DEFLATED) as z:
+        for d, _, files in os.walk(os.path.join(plugin_src, 'truman-bookings')):
+            for f in sorted(files):
+                full = os.path.join(d, f)
+                z.write(full, os.path.relpath(full, plugin_src))
+    shutil.copy(pzip, os.path.join(THEME, 'inc', 'truman-bookings.zip'))
 
     zpath = os.path.join(DIST, 'truman-enterprise.zip')
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED) as z:

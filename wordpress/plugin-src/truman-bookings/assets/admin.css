@@ -1,0 +1,63 @@
+/* Truman Boat Bookings – admin */
+.tb-admin .tb-card { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+.tb-admin .tb-card h2 { margin-top: 0; font-size: 15px; }
+.tb-callout { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: #fff8e5; border: 1px solid #f0c060; border-left: 4px solid #b8852a; padding: 12px 16px; border-radius: 6px; margin: 16px 0; }
+.tb-cal-head { display: flex; align-items: center; justify-content: space-between; margin: 20px 0 8px; }
+.tb-cal-head h2 { margin: 0; font-size: 20px; }
+.tb-legend { display: flex; gap: 18px; font-size: 12px; color: #50575e; margin-bottom: 8px; flex-wrap: wrap; }
+.tb-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.tb-key { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.tb-key--pending { background: #fff3cd; border: 1px solid #b8852a; }
+.tb-key--confirmed { background: #d1f5ee; border: 1px solid #1a6e62; }
+.tb-key--closed { background: #eceef1; border: 1px solid #c3c4c7; }
+.tb-month { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.tb-dow { font-size: 11px; font-weight: 600; text-transform: uppercase; color: #646970; padding: 4px 6px; }
+.tb-cell { background: #fff; border: 1px solid #dcdcde; border-radius: 6px; min-height: 96px; padding: 6px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.tb-cell--blank { background: transparent; border-color: transparent; }
+.tb-cell.is-off { background: #f3f4f6; }
+.tb-cell.is-past { opacity: .6; }
+.tb-cell.is-today { border-color: #0d2137; box-shadow: inset 0 0 0 1px #0d2137; }
+.tb-cell-top { display: flex; justify-content: space-between; align-items: center; }
+.tb-num { font-weight: 600; font-size: 13px; }
+.tb-cell-actions { display: flex; gap: 8px; font-size: 11px; opacity: 0; transition: opacity .15s; }
+.tb-cell:hover .tb-cell-actions, .tb-cell:focus-within .tb-cell-actions { opacity: 1; }
+.tb-cell-actions a { text-decoration: none; }
+.tb-closed-note { font-size: 11px; color: #8a2424; background: #fcebea; border-radius: 4px; padding: 2px 6px; }
+.tb-closed-note--soft { color: #646970; background: transparent; padding: 0; }
+.tb-chip { display: block; text-decoration: none; border-radius: 4px; padding: 3px 6px; font-size: 11px; line-height: 1.35; border-left: 3px solid; overflow: hidden; }
+.tb-chip:focus { box-shadow: 0 0 0 2px #2271b1; }
+.tb-chip--pending { background: #fff3cd; border-color: #b8852a; color: #6b4e00; }
+.tb-chip--confirmed { background: #d1f5ee; border-color: #1a6e62; color: #0a4a40; }
+.tb-chip-time { display: block; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tb-chip-group { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tb-list-title { margin-top: 28px; }
+.tb-table td { vertical-align: top; }
+.tb-ref { color: #646970; font-size: 12px; }
+.tb-empty { color: #646970; font-style: italic; }
+.tb-pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 20px; vertical-align: middle; }
+.tb-pill--pending { background: #fff3cd; color: #6b4e00; }
+.tb-pill--confirmed { background: #d1f5ee; color: #0a4a40; }
+.tb-pill--declined, .tb-pill--cancelled { background: #f0f0f1; color: #50575e; }
+h1 .tb-pill { font-size: 13px; margin-left: 8px; }
+.tb-lead { font-size: 14px; margin-top: 0; }
+.tb-detail { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: start; }
+.tb-dl { width: 100%; border-collapse: collapse; }
+.tb-dl th { text-align: left; width: 160px; color: #50575e; font-weight: 500; padding: 8px 12px 8px 0; vertical-align: top; }
+.tb-dl td { padding: 8px 0; border-bottom: 1px solid #f0f0f1; }
+.tb-status-form { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f1; }
+.tb-status-form:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.tb-status-form textarea { margin-bottom: 6px; }
+.tb-mail-toggle { display: block; margin-bottom: 8px; font-size: 12px; color: #50575e; }
+.tb-admin .button.tb-danger { color: #b32d2e; border-color: #b32d2e; }
+.tb-warn { color: #8a2424; }
+.tb-log { margin: 0; }
+.tb-log li { font-size: 12px; padding: 6px 0; border-bottom: 1px solid #f0f0f1; }
+.tb-trips-table input[type=text], .tb-trips-table textarea { width: 100%; }
+.tb-trips-table td { vertical-align: top; }
+.tb-times { white-space: nowrap; }
+.tb-add-form { max-width: 820px; }
+@media (max-width: 960px) {
+  .tb-detail { grid-template-columns: 1fr; }
+  .tb-cell { min-height: 70px; }
+  .tb-cell-actions { opacity: 1; }
+}

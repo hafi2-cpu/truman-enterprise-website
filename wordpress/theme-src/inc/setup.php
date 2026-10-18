@@ -92,6 +92,7 @@ function truman_setup_page() {
 		<p style="font-size:14px"><?php esc_html_e( 'This builds the Truman Enterprise Narrowboat Trust website in one go:', 'truman' ); ?></p>
 		<ul style="list-style:disc;padding-left:20px;font-size:14px">
 			<li><?php esc_html_e( 'Installs and activates the free Elementor page builder (if needed)', 'truman' ); ?></li>
+			<li><?php esc_html_e( 'Installs the Truman Boat Bookings calendar', 'truman' ); ?></li>
 			<li><?php esc_html_e( 'Adds the site photos to the Media Library', 'truman' ); ?></li>
 			<li><?php esc_html_e( 'Creates the pages: Home, Our Trips, Get Involved, Support Us, Contact, Book a Trip', 'truman' ); ?></li>
 			<li><?php esc_html_e( 'Creates the header and footer menus', 'truman' ); ?></li>
@@ -128,6 +129,7 @@ function truman_handle_setup() {
 	$log     = array();
 
 	$log[]  = truman_ensure_elementor();
+	$log[]  = truman_ensure_bookings();
 	$images = truman_import_images( $log );
 	$pages  = truman_create_pages( $images, $restore, $log );
 	truman_create_menus( $pages, $log );
@@ -178,6 +180,38 @@ function truman_ensure_elementor() {
 		return array( 'warn', sprintf( __( 'Elementor could not be activated: %s', 'truman' ), $activated->get_error_message() ) );
 	}
 	return array( 'ok', __( 'Elementor installed and activated.', 'truman' ) );
+}
+
+/**
+ * Install and activate the bundled Truman Boat Bookings plugin.
+ *
+ * @return array{0:string,1:string}
+ */
+function truman_ensure_bookings() {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	$file = 'truman-bookings/truman-bookings.php';
+	if ( is_plugin_active( $file ) ) {
+		return array( 'ok', __( 'The booking calendar is already active.', 'truman' ) );
+	}
+	if ( ! file_exists( WP_PLUGIN_DIR . '/' . $file ) ) {
+		$zip = get_template_directory() . '/inc/truman-bookings.zip';
+		if ( ! file_exists( $zip ) || ! current_user_can( 'install_plugins' ) ) {
+			return array( 'warn', __( 'The booking calendar plugin could not be installed. Upload truman-bookings.zip in Plugins → Add New → Upload Plugin.', 'truman' ) );
+		}
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+		require_once ABSPATH . 'wp-admin/includes/misc.php';
+		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		$upgrader = new Plugin_Upgrader( new WP_Ajax_Upgrader_Skin() );
+		$result   = $upgrader->install( $zip );
+		if ( is_wp_error( $result ) || ! $result || ! file_exists( WP_PLUGIN_DIR . '/' . $file ) ) {
+			return array( 'warn', __( 'The booking calendar plugin could not be installed. Upload truman-bookings.zip in Plugins → Add New → Upload Plugin.', 'truman' ) );
+		}
+	}
+	$activated = activate_plugin( $file );
+	if ( is_wp_error( $activated ) ) {
+		return array( 'warn', sprintf( __( 'The booking calendar could not be activated: %s', 'truman' ), $activated->get_error_message() ) );
+	}
+	return array( 'ok', __( 'Booking calendar installed (Boat Bookings in the admin menu).', 'truman' ) );
 }
 
 /**

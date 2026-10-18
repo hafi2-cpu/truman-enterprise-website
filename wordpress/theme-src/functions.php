@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TRUMAN_VERSION', '1.4.0' );
+define( 'TRUMAN_VERSION', '1.5.0' );
 
 require_once get_template_directory() . '/inc/setup.php';
 
