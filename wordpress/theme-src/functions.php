@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TRUMAN_VERSION', '1.2.0' );
+define( 'TRUMAN_VERSION', '1.2.1' );
 
 require_once get_template_directory() . '/inc/setup.php';
 
@@ -51,6 +51,23 @@ function truman_disable_emoji_images() {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 }
 add_action( 'init', 'truman_disable_emoji_images' );
+
+/**
+ * Browser tab / home-screen icon (the boat from the logo). A Site Icon chosen in
+ * Appearance → Customize → Site Identity takes priority.
+ */
+function truman_favicon() {
+	if ( has_site_icon() ) {
+		return;
+	}
+	$base = get_template_directory_uri() . '/assets/images/';
+	printf( '<link rel="icon" type="image/png" sizes="32x32" href="%s">' . "\n", esc_url( $base . 'favicon-32.png' ) );
+	printf( '<link rel="icon" type="image/png" sizes="16x16" href="%s">' . "\n", esc_url( $base . 'favicon-16.png' ) );
+	printf( '<link rel="icon" type="image/png" sizes="512x512" href="%s">' . "\n", esc_url( $base . 'site-icon-512.png' ) );
+	printf( '<link rel="apple-touch-icon" href="%s">' . "\n", esc_url( $base . 'apple-touch-icon.png' ) );
+}
+add_action( 'wp_head', 'truman_favicon', 5 );
+add_action( 'admin_head', 'truman_favicon', 5 );
 
 /**
  * Every page gets the "te-site" class; all site styles are scoped to it.

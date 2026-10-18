@@ -216,7 +216,7 @@ Theme Name: Truman Enterprise
 Theme URI: https://truman-enterprise.org.uk
 Author: Truman Enterprise Narrowboat Trust
 Description: Website theme for the Truman Enterprise Narrowboat Trust — accessible canal boat trips in the West Midlands since 1968. After activating, go to Appearance → Truman Setup and press "Set up the site" to install Elementor and create the pages, menus and photos.
-Version: 1.2.0
+Version: 1.2.1
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
