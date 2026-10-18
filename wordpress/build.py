@@ -30,6 +30,16 @@ IMAGES = {
     'autherley-turn.jpg':   ('truman-autherley-junction.jpg',  'Autherley Junction on the Staffs & Worcs Canal'),
     'volunteers-boat.jpg':  ('truman-volunteers-boat.jpg',     'Volunteers on the narrowboat'),
     'anchor-pub.jpg':       ('truman-anchor-pub-coven.jpg',    'The Anchor pub at Coven'),
+    'skipper-bridge.jpg':        ('truman-skipper-bridge.jpg',        'Volunteer skipper steering Enterprise under a canal bridge'),
+    'bow-canal.jpg':             ('truman-bow-canal.jpg',             'The tree-lined canal seen from the bow of Enterprise'),
+    'front-deck.jpg':            ('truman-front-deck.jpg',            'Passengers relaxing on the front deck under the trees'),
+    'enterprise-anchor-inn.jpg': ('truman-enterprise-anchor-inn.jpg', 'Enterprise moored at the Anchor Inn, Coven'),
+    'anchor-inn-approach.jpg':   ('truman-anchor-inn-approach.jpg',   'Enterprise approaching the Anchor Inn'),
+    'enterprise-moored.jpg':     ('truman-enterprise-moored.jpg',     'Narrowboat Enterprise moored at Hatherton Marina'),
+    'lock-paddle.jpg':           ('truman-lock-paddle.jpg',           'Young passenger winding a lock paddle'),
+    'umbrella-accessible.jpg':   ('truman-umbrella-accessible.jpg',   'Passengers on the front deck of Enterprise, one in a wheelchair'),
+    'towpath-bridge.jpg':        ('truman-towpath-bridge.jpg',        'The Staffs & Worcs Canal towpath'),
+    'hatherton-marina.jpg':      ('truman-hatherton-marina.jpg',      'Hatherton Marina, Calf Heath'),
 }
 
 # static file -> (key, slug, title)
@@ -250,7 +260,7 @@ Theme Name: Truman Enterprise
 Theme URI: https://truman-enterprise.org.uk
 Author: Truman Enterprise Narrowboat Trust
 Description: Website theme for the Truman Enterprise Narrowboat Trust — accessible canal boat trips in the West Midlands since 1968. After activating, go to Appearance → Truman Setup and press "Set up the site" to install Elementor and create the pages, menus and photos.
-Version: 1.3.0
+Version: 1.4.0
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
