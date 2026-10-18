@@ -17,23 +17,7 @@
 <nav>
 	<div class="nav-inner">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
-			<svg class="nav-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-				<rect x="4" y="28" width="40" height="10" rx="2" fill="#1a6e62"/>
-				<rect x="8" y="22" width="28" height="8" rx="1" fill="#b8852a"/>
-				<rect x="16" y="14" width="16" height="10" rx="1" fill="#b8852a"/>
-				<rect x="10" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.7)"/>
-				<rect x="18" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.7)"/>
-				<rect x="26" y="24" width="4" height="4" rx="1" fill="rgba(255,255,255,0.7)"/>
-				<circle cx="12" cy="38" r="4" fill="#0d2137"/>
-				<circle cx="12" cy="38" r="2" fill="#4a6080"/>
-				<circle cx="36" cy="38" r="4" fill="#0d2137"/>
-				<circle cx="36" cy="38" r="2" fill="#4a6080"/>
-				<line x1="4" y1="28" x2="44" y2="28" stroke="#1a6e62" stroke-width="1.5"/>
-			</svg>
-			<div class="nav-logo-text">
-				<span>Truman Enterprise</span>
-				<span>Narrowboat Trust</span>
-			</div>
+			<img class="nav-logo-img" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/truman-logo.png' ); ?>" width="173" height="80" alt="<?php esc_attr_e( 'Truman Enterprise Narrowboat Trust', 'truman' ); ?>">
 		</a>
 		<button class="nav-hamburger" aria-label="<?php esc_attr_e( 'Menu', 'truman' ); ?>">
 			<span></span><span></span><span></span>

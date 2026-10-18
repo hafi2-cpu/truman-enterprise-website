@@ -15,6 +15,7 @@
 		</div>
 		<div class="footer-grid">
 			<div class="footer-brand">
+				<img class="footer-logo" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/truman-logo-large.png' ); ?>" width="216" height="100" alt="<?php esc_attr_e( 'Truman Enterprise Narrowboat Trust', 'truman' ); ?>" loading="lazy">
 				<p>A volunteer-run charity providing accessible canal boat day trips for elderly, disabled and community groups across the West Midlands since 1968.</p>
 				<span class="footer-charity-no">Registered Charity No. 1037914</span>
 			</div>

@@ -182,6 +182,12 @@ DEFAULTS = """
 .te-site img.emoji, .te-site img.wp-smiley { display:inline !important; width:1em !important; height:1em !important; max-width:none !important; margin:0 .07em !important; vertical-align:-0.1em !important; border:none !important; box-shadow:none !important; background:none !important; padding:0 !important; }
 .te-site .page-hero img, .te-site .img-frame img { max-width:none; }
 
+/* ===== logo ===== */
+.te-site .nav-inner { height:84px; }
+.te-site .nav-logo-img { display:block; height:64px; width:auto; max-width:none; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25)); }
+.te-site .footer-logo { display:block; height:96px; width:auto; margin-bottom:20px; }
+@media (max-width: 900px) { .te-site .nav-inner { height:auto; } .te-site .nav-logo-img { height:52px; } }
+
 /* ===== keep content inside its boxes on small screens ===== */
 .te-site .booking-layout > *, .te-site .contact-grid > *, .te-site .trips-page-layout > *, .te-site .two-col > *, .te-site .form-row > * { min-width:0; }
 .te-site .form-group input, .te-site .form-group select, .te-site .form-group textarea { min-width:0; max-width:100%; }
@@ -210,7 +216,7 @@ Theme Name: Truman Enterprise
 Theme URI: https://truman-enterprise.org.uk
 Author: Truman Enterprise Narrowboat Trust
 Description: Website theme for the Truman Enterprise Narrowboat Trust — accessible canal boat trips in the West Midlands since 1968. After activating, go to Appearance → Truman Setup and press "Set up the site" to install Elementor and create the pages, menus and photos.
-Version: 1.1.0
+Version: 1.2.0
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
