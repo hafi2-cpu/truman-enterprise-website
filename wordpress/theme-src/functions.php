@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TRUMAN_VERSION', '1.5.0' );
+define( 'TRUMAN_VERSION', '1.5.1' );
 
 require_once get_template_directory() . '/inc/setup.php';
 
@@ -68,6 +68,17 @@ function truman_favicon() {
 }
 add_action( 'wp_head', 'truman_favicon', 5 );
 add_action( 'admin_head', 'truman_favicon', 5 );
+
+/**
+ * When a photo is swapped in the page editor (Image details → Replace), insert
+ * the full-size image rather than a small thumbnail.
+ */
+add_filter(
+	'pre_option_image_default_size',
+	function () {
+		return 'full';
+	}
+);
 
 /**
  * Every page gets the "te-site" class; all site styles are scoped to it.

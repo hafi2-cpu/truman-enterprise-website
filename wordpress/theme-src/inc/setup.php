@@ -282,6 +282,34 @@ function truman_fill( $text, array $images ) {
 }
 
 /**
+ * Tag each photo with its Media Library ID (class wp-image-N size-full) so
+ * volunteers can swap it with Image details → Replace in the page editor.
+ * Works on JSON-encoded Elementor data, where quotes appear as \\".
+ */
+function truman_tag_images( $text ) {
+	return preg_replace_callback(
+		'/<img\b[^>]*>/',
+		function ( $m ) {
+			$tag = $m[0];
+			if ( false !== strpos( $tag, 'wp-image-' ) || ! preg_match( '/src=\\\\?"(.*?)\\\\?"/', $tag, $src ) ) {
+				return $tag;
+			}
+			$id = attachment_url_to_postid( stripslashes( $src[1] ) );
+			if ( ! $id ) {
+				return $tag;
+			}
+			$add = 'wp-image-' . $id . ' size-full';
+			if ( preg_match( '/class=\\\\?"/', $tag ) ) {
+				return preg_replace( '/class=(\\\\?")/', 'class=${1}' . $add . ' ', $tag, 1 );
+			}
+			$q = false !== strpos( $tag, '\\"' ) ? '\\"' : '"';
+			return '<img class=' . $q . $add . $q . substr( $tag, 4 );
+		},
+		$text
+	);
+}
+
+/**
  * @return array key => page ID
  */
 function truman_create_pages( array $images, $restore, array &$log ) {
@@ -328,7 +356,7 @@ function truman_create_pages( array $images, $restore, array &$log ) {
 		update_post_meta( $id, '_elementor_template_type', 'wp-page' );
 		update_post_meta( $id, '_elementor_version', $version );
 		update_post_meta( $id, '_elementor_page_settings', array( 'hide_title' => 'yes' ) );
-		update_post_meta( $id, '_elementor_data', wp_slash( truman_fill( $p['elementor'], $images ) ) );
+		update_post_meta( $id, '_elementor_data', wp_slash( truman_tag_images( truman_fill( $p['elementor'], $images ) ) ) );
 		delete_post_meta( $id, '_elementor_css' );
 
 		$ids[ $p['key'] ] = $id;
