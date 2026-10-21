@@ -274,7 +274,7 @@ Theme Name: Truman Enterprise
 Theme URI: https://truman-enterprise.org.uk
 Author: Truman Enterprise Narrowboat Trust
 Description: Website theme for the Truman Enterprise Narrowboat Trust — accessible canal boat trips in the West Midlands since 1968. After activating, go to Appearance → Truman Setup and press "Set up the site" to install Elementor and create the pages, menus and photos.
-Version: 1.5.1
+Version: 1.5.2
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GNU General Public License v2 or later
@@ -294,6 +294,25 @@ def build_js():
                     "(function (init) { if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init(); })(function () {", 1)
     assert 'readyState' in js and 'Set active nav link' not in js
     return js
+
+
+# ---------------------------------------------------------------- guides
+GUIDES = [('editing', 'editing-the-website-guide.md'), ('bookings', 'boat-bookings-guide.md')]
+
+def build_guides():
+    """Volunteer guides (repo /guides/*.md) -> HTML fragments shown in wp-admin."""
+    import markdown
+    gdir = os.path.join(ROOT, 'guides')
+    out = os.path.join(THEME, 'guides')
+    shutil.copytree(os.path.join(gdir, 'images'), os.path.join(out, 'images'))
+    for key, md in GUIDES:
+        text = open(os.path.join(gdir, md)).read()
+        text = re.sub(r'\]\((boat-bookings|editing-the-website)-guide\.md\)',
+                      lambda m: '](%%GUIDE:' + ('bookings' if m.group(1) == 'boat-bookings' else 'editing') + '%%)', text)
+        html = markdown.markdown(text, extensions=['tables'])
+        html = html.replace('src="images/', 'src="%%GUIDES%%/images/')
+        assert 'images/' in html and '.md' not in html
+        open(os.path.join(out, key + '.html'), 'w').write(html)
 
 
 # ---------------------------------------------------------------- package
@@ -318,6 +337,8 @@ def main():
                   for loc, items in MENUS.items()},
     }
     json.dump(data, open(os.path.join(THEME, 'inc/site-data.json'), 'w'), ensure_ascii=False, indent=1)
+
+    build_guides()
 
     shot = os.path.join(HERE, 'screenshot.png')
     if os.path.exists(shot):

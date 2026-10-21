@@ -7,9 +7,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TRUMAN_VERSION', '1.5.1' );
+define( 'TRUMAN_VERSION', '1.5.2' );
 
 require_once get_template_directory() . '/inc/setup.php';
+require_once get_template_directory() . '/inc/guides.php';
 
 /**
  * Theme supports and menu locations.
